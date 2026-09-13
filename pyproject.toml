@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "harness-starter-kit"
+version = "1.0.0"
+description = "Deterministic control plane for task, repository and team evolution"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["jsonschema>=4.21,<5"]
+
+[project.scripts]
+harnessctl = "harnessctl.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+harnessctl = ["resources/schemas/*.json", "resources/seed/**/*", "resources/seed/**/.*", "resources/skills/*/SKILL.md"]

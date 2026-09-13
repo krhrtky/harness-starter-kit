@@ -1,0 +1,278 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "id": "harness.cli",
+      "type": "tool",
+      "purpose": "Deterministic delivery and evolution gates",
+      "scope": [
+        "**"
+      ],
+      "status": "experimental",
+      "owner": "harness-maintainers",
+      "location": "src/harnessctl",
+      "provides": [
+        "harness.gates"
+      ],
+      "version": "1.0.0",
+      "consumers": [],
+      "evidence": [
+        "tests/test_contracts.py"
+      ],
+      "deprecated_by": null,
+      "constraints": []
+    },
+    {
+      "id": "harness.schemas",
+      "type": "schema",
+      "purpose": "Versioned Harness contracts",
+      "scope": [
+        "**"
+      ],
+      "status": "experimental",
+      "owner": "harness-maintainers",
+      "location": "src/harnessctl/resources/schemas",
+      "provides": [
+        "harness.contracts"
+      ],
+      "version": "1.0.0",
+      "consumers": [],
+      "evidence": [
+        "tests/test_contracts.py"
+      ],
+      "deprecated_by": null,
+      "constraints": []
+    },
+    {
+      "id": "harness.seed",
+      "type": "workflow",
+      "purpose": "Non-destructive repository bootstrap",
+      "scope": [
+        "**"
+      ],
+      "status": "experimental",
+      "owner": "harness-maintainers",
+      "location": "src/harnessctl/resources/seed",
+      "provides": [
+        "harness.bootstrap"
+      ],
+      "version": "1.0.0",
+      "consumers": [],
+      "evidence": [
+        "tests/test_contracts.py"
+      ],
+      "deprecated_by": null,
+      "constraints": []
+    },
+    {
+      "id": "harness-adapt",
+      "type": "skill",
+      "purpose": "Harness adapt orchestration",
+      "scope": [
+        "**"
+      ],
+      "status": "experimental",
+      "owner": "harness-maintainers",
+      "location": ".agents/skills/harness-adapt",
+      "provides": [
+        "harness.adapt"
+      ],
+      "version": "1.0.0",
+      "consumers": [],
+      "evidence": [
+        "tests/test_contracts.py"
+      ],
+      "deprecated_by": null,
+      "constraints": []
+    },
+    {
+      "id": "harness-bootstrap",
+      "type": "skill",
+      "purpose": "Harness bootstrap orchestration",
+      "scope": [
+        "**"
+      ],
+      "status": "experimental",
+      "owner": "harness-maintainers",
+      "location": ".agents/skills/harness-bootstrap",
+      "provides": [
+        "harness.bootstrap"
+      ],
+      "version": "1.0.0",
+      "consumers": [],
+      "evidence": [
+        "tests/test_contracts.py"
+      ],
+      "deprecated_by": null,
+      "constraints": []
+    },
+    {
+      "id": "harness-deliver",
+      "type": "skill",
+      "purpose": "Harness deliver orchestration",
+      "scope": [
+        "**"
+      ],
+      "status": "experimental",
+      "owner": "harness-maintainers",
+      "location": ".agents/skills/harness-deliver",
+      "provides": [
+        "harness.deliver"
+      ],
+      "version": "1.0.0",
+      "consumers": [],
+      "evidence": [
+        "tests/test_contracts.py"
+      ],
+      "deprecated_by": null,
+      "constraints": []
+    },
+    {
+      "id": "harness-garden",
+      "type": "skill",
+      "purpose": "Harness garden orchestration",
+      "scope": [
+        "**"
+      ],
+      "status": "experimental",
+      "owner": "harness-maintainers",
+      "location": ".agents/skills/harness-garden",
+      "provides": [
+        "harness.garden"
+      ],
+      "version": "1.0.0",
+      "consumers": [],
+      "evidence": [
+        "tests/test_contracts.py"
+      ],
+      "deprecated_by": null,
+      "constraints": []
+    },
+    {
+      "id": "harness-intake",
+      "type": "skill",
+      "purpose": "Harness intake orchestration",
+      "scope": [
+        "**"
+      ],
+      "status": "experimental",
+      "owner": "harness-maintainers",
+      "location": ".agents/skills/harness-intake",
+      "provides": [
+        "harness.intake"
+      ],
+      "version": "1.0.0",
+      "consumers": [],
+      "evidence": [
+        "tests/test_contracts.py"
+      ],
+      "deprecated_by": null,
+      "constraints": []
+    },
+    {
+      "id": "harness-learn",
+      "type": "skill",
+      "purpose": "Harness learn orchestration",
+      "scope": [
+        "**"
+      ],
+      "status": "experimental",
+      "owner": "harness-maintainers",
+      "location": ".agents/skills/harness-learn",
+      "provides": [
+        "harness.learn"
+      ],
+      "version": "1.0.0",
+      "consumers": [],
+      "evidence": [
+        "tests/test_contracts.py"
+      ],
+      "deprecated_by": null,
+      "constraints": []
+    },
+    {
+      "id": "harness-plan",
+      "type": "skill",
+      "purpose": "Harness plan orchestration",
+      "scope": [
+        "**"
+      ],
+      "status": "experimental",
+      "owner": "harness-maintainers",
+      "location": ".agents/skills/harness-plan",
+      "provides": [
+        "harness.plan"
+      ],
+      "version": "1.0.0",
+      "consumers": [],
+      "evidence": [
+        "tests/test_contracts.py"
+      ],
+      "deprecated_by": null,
+      "constraints": []
+    },
+    {
+      "id": "harness-preflight",
+      "type": "skill",
+      "purpose": "Harness preflight orchestration",
+      "scope": [
+        "**"
+      ],
+      "status": "experimental",
+      "owner": "harness-maintainers",
+      "location": ".agents/skills/harness-preflight",
+      "provides": [
+        "harness.preflight"
+      ],
+      "version": "1.0.0",
+      "consumers": [],
+      "evidence": [
+        "tests/test_contracts.py"
+      ],
+      "deprecated_by": null,
+      "constraints": []
+    },
+    {
+      "id": "harness-review",
+      "type": "skill",
+      "purpose": "Harness review orchestration",
+      "scope": [
+        "**"
+      ],
+      "status": "experimental",
+      "owner": "harness-maintainers",
+      "location": ".agents/skills/harness-review",
+      "provides": [
+        "harness.review"
+      ],
+      "version": "1.0.0",
+      "consumers": [],
+      "evidence": [
+        "tests/test_contracts.py"
+      ],
+      "deprecated_by": null,
+      "constraints": []
+    },
+    {
+      "id": "harness-verify",
+      "type": "skill",
+      "purpose": "Harness verify orchestration",
+      "scope": [
+        "**"
+      ],
+      "status": "experimental",
+      "owner": "harness-maintainers",
+      "location": ".agents/skills/harness-verify",
+      "provides": [
+        "harness.verify"
+      ],
+      "version": "1.0.0",
+      "consumers": [],
+      "evidence": [
+        "tests/test_contracts.py"
+      ],
+      "deprecated_by": null,
+      "constraints": []
+    }
+  ]
+}

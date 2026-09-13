@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://harness.local/schema/v1/team.schema.json",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "assets": {
+      "$ref": "assets.schema.json"
+    },
+    "policy": {
+      "$ref": "policy.schema.json"
+    },
+    "evolution": {
+      "$ref": "evolution.schema.json"
+    }
+  },
+  "required": [
+    "schema_version",
+    "name",
+    "assets",
+    "policy",
+    "evolution"
+  ],
+  "additionalProperties": false
+}

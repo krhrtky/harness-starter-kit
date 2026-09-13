@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "capabilities": [
+    {
+      "id": "test.unit",
+      "adapter": "process",
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": ".",
+      "timeout_seconds": 300,
+      "enabled": true,
+      "env": {},
+      "artifacts": []
+    }
+  ]
+}

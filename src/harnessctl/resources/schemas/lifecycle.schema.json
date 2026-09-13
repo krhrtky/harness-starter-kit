@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://harness.local/schema/v1/lifecycle.schema.json",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "asset": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,99}$"
+    },
+    "from_status": {
+      "enum": [
+        "experimental",
+        "standard",
+        "deprecated"
+      ]
+    },
+    "to_status": {
+      "enum": [
+        "standard",
+        "deprecated",
+        "removed"
+      ]
+    },
+    "reviewed_by": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decision": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "consumers_verified": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "replacement": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "asset",
+    "from_status",
+    "to_status",
+    "reviewed_by",
+    "decision",
+    "evidence",
+    "consumers_verified",
+    "replacement"
+  ],
+  "additionalProperties": false
+}

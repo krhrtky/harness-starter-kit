@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://harness.local/schema/v1/baseline.schema.json",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,99}$"
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+          },
+          "message": {
+            "type": "string",
+            "minLength": 1
+          },
+          "interface": {
+            "anyOf": [
+              {
+                "enum": [
+                  "H00",
+                  "H01",
+                  "H02",
+                  "H03",
+                  "H04",
+                  "H05",
+                  "H06",
+                  "H07",
+                  "H08",
+                  "H09",
+                  "H10",
+                  "H11",
+                  "H12",
+                  "H13",
+                  "H14",
+                  "H15",
+                  "H16",
+                  "H17",
+                  "H18",
+                  "H19",
+                  "H20",
+                  "H21",
+                  "H22",
+                  "H23",
+                  "H24",
+                  "H25",
+                  "H26"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "fingerprint": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "required": [
+          "code",
+          "path",
+          "message",
+          "interface",
+          "fingerprint"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "quality": {
+      "$ref": "quality.schema.json"
+    },
+    "readiness": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 6
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "created_at",
+    "findings",
+    "quality",
+    "readiness"
+  ],
+  "additionalProperties": false
+}

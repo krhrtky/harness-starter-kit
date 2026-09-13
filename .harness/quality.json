@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "scores": [
+    {
+      "scope": "src/harnessctl/**",
+      "dimension": "tests",
+      "score": 70,
+      "basis": "Contract and mutation coverage of core gates; Windows and remote integrations remain untested",
+      "evidence": [
+        "tests/test_contracts.py"
+      ]
+    },
+    {
+      "scope": "src/harnessctl/**",
+      "dimension": "documentation",
+      "score": 80,
+      "basis": "CLI/design/upgrade/validation documentation; per-language runbooks remain project-specific",
+      "evidence": [
+        "docs/harness/cli.md",
+        "docs/harness/design.md"
+      ]
+    }
+  ]
+}

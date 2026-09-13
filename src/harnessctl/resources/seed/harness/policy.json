@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "rules": [],
+  "readiness": {
+    "preflight": {
+      "low": 2,
+      "medium": 2,
+      "high": 3,
+      "critical": 4
+    },
+    "delivery": {
+      "low": 2,
+      "medium": 3,
+      "high": 4,
+      "critical": 5
+    }
+  },
+  "evidence_max_age_hours": 24,
+  "knowledge_max_age_days": 90,
+  "promotion_reviewers": [
+    "UNKNOWN"
+  ],
+  "required_review_views": [
+    "entailment",
+    "contradiction",
+    "counterexample"
+  ]
+}

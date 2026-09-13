@@ -1,0 +1,6 @@
+{
+  "write": {
+    "docs/domain/index.md": "Changed domain contract without renewed review.\n"
+  },
+  "expected": "knowledge.stale"
+}

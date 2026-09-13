@@ -1,0 +1,6 @@
+{
+  "write": {
+    "app/orders.py": "def cancel(state):\n    return 'cancelled'\n"
+  },
+  "expected": "evidence.failed"
+}

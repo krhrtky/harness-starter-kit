@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://harness.local/schema/v1/feedback.schema.json",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,99}$"
+    },
+    "task": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,99}$"
+    },
+    "category": {
+      "enum": [
+        "regression",
+        "domain",
+        "architecture",
+        "procedure",
+        "observability",
+        "authority",
+        "stale-knowledge",
+        "duplication"
+      ]
+    },
+    "root_cause": {
+      "type": "string",
+      "minLength": 1
+    },
+    "recurrence": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "deterministic": {
+      "type": "boolean"
+    },
+    "existing_assets": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,99}$"
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "intervention": {
+      "enum": [
+        "test",
+        "rule",
+        "skill",
+        "knowledge",
+        "abstraction",
+        "none"
+      ]
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "recorded",
+        "promoted"
+      ]
+    },
+    "promotion": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "target": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+        },
+        "reviewed_by": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decision": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+        }
+      },
+      "required": [
+        "target",
+        "reviewed_by",
+        "decision"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "id",
+    "task",
+    "category",
+    "root_cause",
+    "recurrence",
+    "deterministic",
+    "existing_assets",
+    "evidence",
+    "intervention",
+    "reason",
+    "status",
+    "promotion"
+  ],
+  "additionalProperties": false
+}

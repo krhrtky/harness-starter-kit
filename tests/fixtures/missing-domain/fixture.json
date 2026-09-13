@@ -1,0 +1,6 @@
+{
+  "delete": [
+    "docs/domain/index.md"
+  ],
+  "expected": "knowledge.missing"
+}

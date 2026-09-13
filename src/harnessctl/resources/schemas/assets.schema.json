@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://harness.local/schema/v1/assets.schema.json",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,99}$"
+          },
+          "type": {
+            "enum": [
+              "code",
+              "library",
+              "api",
+              "schema",
+              "contract",
+              "pattern",
+              "golden-path",
+              "test",
+              "fixture",
+              "skill",
+              "script",
+              "tool",
+              "observability",
+              "policy",
+              "domain",
+              "decision",
+              "runbook",
+              "workflow"
+            ]
+          },
+          "purpose": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scope": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "status": {
+            "enum": [
+              "experimental",
+              "standard",
+              "deprecated",
+              "removed"
+            ]
+          },
+          "owner": {
+            "type": "string",
+            "minLength": 1
+          },
+          "location": {
+            "type": "string",
+            "minLength": 1
+          },
+          "provides": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,99}$"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "consumers": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0,
+            "uniqueItems": true
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+            },
+            "minItems": 0,
+            "uniqueItems": true
+          },
+          "deprecated_by": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "constraints": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "id",
+          "type",
+          "purpose",
+          "scope",
+          "status",
+          "owner",
+          "location",
+          "provides",
+          "version",
+          "consumers",
+          "evidence",
+          "deprecated_by",
+          "constraints"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "schema_version",
+    "assets"
+  ],
+  "additionalProperties": false
+}

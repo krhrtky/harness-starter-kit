@@ -1,0 +1,234 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://harness.local/schema/v1/policy.schema.json",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,99}$"
+          },
+          "interface": {
+            "enum": [
+              "H00",
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08",
+              "H09",
+              "H10",
+              "H11",
+              "H12",
+              "H13",
+              "H14",
+              "H15",
+              "H16",
+              "H17",
+              "H18",
+              "H19",
+              "H20",
+              "H21",
+              "H22",
+              "H23",
+              "H24",
+              "H25",
+              "H26"
+            ]
+          },
+          "owner": {
+            "type": "string",
+            "minLength": 1
+          },
+          "severity": {
+            "enum": [
+              "must",
+              "should"
+            ]
+          },
+          "scope": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "source": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+          },
+          "enforcement": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,99}$"
+            },
+            "minItems": 0,
+            "uniqueItems": true
+          },
+          "forbid_paths": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+            },
+            "minItems": 0,
+            "uniqueItems": true
+          },
+          "require_paths": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+            },
+            "minItems": 0,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "id",
+          "interface",
+          "owner",
+          "severity",
+          "scope",
+          "source",
+          "enforcement",
+          "forbid_paths",
+          "require_paths"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "readiness": {
+      "type": "object",
+      "properties": {
+        "preflight": {
+          "type": "object",
+          "properties": {
+            "low": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 6
+            },
+            "medium": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 6
+            },
+            "high": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 6
+            },
+            "critical": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 6
+            }
+          },
+          "required": [
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ],
+          "additionalProperties": false
+        },
+        "delivery": {
+          "type": "object",
+          "properties": {
+            "low": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 6
+            },
+            "medium": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 6
+            },
+            "high": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 6
+            },
+            "critical": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 6
+            }
+          },
+          "required": [
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "preflight",
+        "delivery"
+      ],
+      "additionalProperties": false
+    },
+    "evidence_max_age_hours": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "knowledge_max_age_days": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "promotion_reviewers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "required_review_views": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "entailment",
+          "contradiction",
+          "counterexample"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "schema_version",
+    "rules",
+    "readiness",
+    "evidence_max_age_hours",
+    "knowledge_max_age_days",
+    "promotion_reviewers",
+    "required_review_views"
+  ],
+  "additionalProperties": false
+}

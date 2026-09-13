@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "id": "BINARY-USAGE-1",
+  "outcome": "GitHub binary users and agents can discover usage, Skills and schemas offline without Python or a source checkout",
+  "non_goals": [
+    "Windows support",
+    "Domain policy changes",
+    "Automatic production deployment"
+  ],
+  "acceptance": [
+    {
+      "id": "AC-USAGE",
+      "statement": "CLI exposes usage index, actual command arguments, full guides and Skills before repository init",
+      "capabilities": [
+        "test.unit"
+      ]
+    },
+    {
+      "id": "AC-SCHEMA",
+      "statement": "CLI exposes embedded schema contracts without a project or network",
+      "capabilities": [
+        "test.unit"
+      ]
+    },
+    {
+      "id": "AC-BINARY",
+      "statement": "Standalone native binary includes resources and supports init and gates without external Python",
+      "capabilities": [
+        "test.unit"
+      ]
+    },
+    {
+      "id": "AC-RELEASE",
+      "statement": "GitHub workflow builds tested OS-specific archives and checksums before release",
+      "capabilities": [
+        "test.unit"
+      ]
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "reasons": [
+      "Read-only discovery API plus build/release integration; existing gates remain enforced"
+    ]
+  },
+  "affected_interfaces": [
+    "H00",
+    "H02",
+    "H09",
+    "H10",
+    "H11",
+    "H13",
+    "H17",
+    "H18",
+    "H20",
+    "H26"
+  ],
+  "scope": [
+    "src/harnessctl/**",
+    "tests/**",
+    "tooling/**",
+    "docs/**",
+    "README.md",
+    "IMPLEMENTATION.md",
+    "AGENTS.md",
+    ".agents/skills/**",
+    ".github/**",
+    "pyproject.toml",
+    "requirements-build.txt"
+  ],
+  "constraints": [
+    "No project policy weakening",
+    "No guessed application commands"
+  ],
+  "required_capabilities": [
+    "test.unit"
+  ],
+  "unknowns": [],
+  "asset_analysis": {
+    "searched_capabilities": [
+      "harness.gates",
+      "harness.contracts",
+      "harness.bootstrap"
+    ],
+    "reused": [
+      "harness.schemas",
+      "harness-bootstrap"
+    ],
+    "extended": [
+      "harness.cli",
+      "harness.seed"
+    ],
+    "new_assets": [],
+    "duplicates_considered": [
+      {
+        "asset": "harness.cli",
+        "decision": "extend",
+        "reason": "Expose the existing CLI parser and bundled resources"
+      },
+      {
+        "asset": "harness.schemas",
+        "decision": "reuse",
+        "reason": "Return existing schema files"
+      },
+      {
+        "asset": "harness.seed",
+        "decision": "extend",
+        "reason": "Route binary users to the same usage documents"
+      },
+      {
+        "asset": "harness-bootstrap",
+        "decision": "reuse",
+        "reason": "Keep the current bootstrap workflow"
+      }
+    ],
+    "consolidation_opportunities": []
+  },
+  "placement": [
+    {
+      "path": "src/harnessctl/**",
+      "reason": "Distribution, discoverability and validation implementation",
+      "target_alignment": "Keep language-neutral protocol and generic process adapter"
+    },
+    {
+      "path": "tests/**",
+      "reason": "Distribution, discoverability and validation implementation",
+      "target_alignment": "Keep language-neutral protocol and generic process adapter"
+    },
+    {
+      "path": "tooling/**",
+      "reason": "Distribution, discoverability and validation implementation",
+      "target_alignment": "Keep language-neutral protocol and generic process adapter"
+    },
+    {
+      "path": "docs/**",
+      "reason": "Distribution, discoverability and validation implementation",
+      "target_alignment": "Keep language-neutral protocol and generic process adapter"
+    },
+    {
+      "path": "README.md",
+      "reason": "Distribution, discoverability and validation implementation",
+      "target_alignment": "Keep language-neutral protocol and generic process adapter"
+    },
+    {
+      "path": "IMPLEMENTATION.md",
+      "reason": "Distribution, discoverability and validation implementation",
+      "target_alignment": "Keep language-neutral protocol and generic process adapter"
+    },
+    {
+      "path": "AGENTS.md",
+      "reason": "Distribution, discoverability and validation implementation",
+      "target_alignment": "Keep language-neutral protocol and generic process adapter"
+    },
+    {
+      "path": ".agents/skills/**",
+      "reason": "Distribution, discoverability and validation implementation",
+      "target_alignment": "Keep language-neutral protocol and generic process adapter"
+    },
+    {
+      "path": ".github/**",
+      "reason": "Distribution, discoverability and validation implementation",
+      "target_alignment": "Keep language-neutral protocol and generic process adapter"
+    },
+    {
+      "path": "pyproject.toml",
+      "reason": "Distribution, discoverability and validation implementation",
+      "target_alignment": "Keep language-neutral protocol and generic process adapter"
+    },
+    {
+      "path": "requirements-build.txt",
+      "reason": "Distribution, discoverability and validation implementation",
+      "target_alignment": "Keep language-neutral protocol and generic process adapter"
+    }
+  ],
+  "cross_system_impact": {
+    "consumers": [],
+    "reason": "No registered external consumers; existing CLI interface preserved"
+  },
+  "reviewer": "harness-maintainers"
+}

@@ -1,0 +1,6 @@
+{
+  "delete": [
+    "ARCHITECTURE.md"
+  ],
+  "expected": "router.missing"
+}

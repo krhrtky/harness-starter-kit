@@ -1,0 +1,248 @@
+{
+  "schema_version": 1,
+  "documents": [
+    {
+      "id": "product",
+      "path": "docs/product/index.md",
+      "interface": "H00",
+      "owner": "UNKNOWN",
+      "status": "unknown",
+      "reviewed_at": "2026-01-01T00:00:00+00:00",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "domain",
+      "path": "docs/domain/index.md",
+      "interface": "H01",
+      "owner": "UNKNOWN",
+      "status": "unknown",
+      "reviewed_at": "2026-01-01T00:00:00+00:00",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "architecture",
+      "path": "docs/architecture/index.md",
+      "interface": "H02",
+      "owner": "UNKNOWN",
+      "status": "unknown",
+      "reviewed_at": "2026-01-01T00:00:00+00:00",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "contracts",
+      "path": "docs/contracts/index.md",
+      "interface": "H03",
+      "owner": "UNKNOWN",
+      "status": "unknown",
+      "reviewed_at": "2026-01-01T00:00:00+00:00",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "data",
+      "path": "docs/data/index.md",
+      "interface": "H04",
+      "owner": "UNKNOWN",
+      "status": "unknown",
+      "reviewed_at": "2026-01-01T00:00:00+00:00",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "security",
+      "path": "docs/security/index.md",
+      "interface": "H05",
+      "owner": "UNKNOWN",
+      "status": "unknown",
+      "reviewed_at": "2026-01-01T00:00:00+00:00",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "reliability",
+      "path": "docs/reliability/index.md",
+      "interface": "H06",
+      "owner": "UNKNOWN",
+      "status": "unknown",
+      "reviewed_at": "2026-01-01T00:00:00+00:00",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "ux",
+      "path": "docs/ux/index.md",
+      "interface": "H07",
+      "owner": "UNKNOWN",
+      "status": "unknown",
+      "reviewed_at": "2026-01-01T00:00:00+00:00",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "observability",
+      "path": "docs/observability/index.md",
+      "interface": "H08",
+      "owner": "UNKNOWN",
+      "status": "unknown",
+      "reviewed_at": "2026-01-01T00:00:00+00:00",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "verification",
+      "path": "docs/verification/index.md",
+      "interface": "H09",
+      "owner": "UNKNOWN",
+      "status": "unknown",
+      "reviewed_at": "2026-01-01T00:00:00+00:00",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "environment",
+      "path": "docs/environment/index.md",
+      "interface": "H10",
+      "owner": "UNKNOWN",
+      "status": "unknown",
+      "reviewed_at": "2026-01-01T00:00:00+00:00",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "delivery",
+      "path": "docs/delivery/index.md",
+      "interface": "H11",
+      "owner": "UNKNOWN",
+      "status": "unknown",
+      "reviewed_at": "2026-01-01T00:00:00+00:00",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "authority",
+      "path": "docs/authority/index.md",
+      "interface": "H12",
+      "owner": "UNKNOWN",
+      "status": "unknown",
+      "reviewed_at": "2026-01-01T00:00:00+00:00",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "knowledge",
+      "path": "docs/knowledge/index.md",
+      "interface": "H13",
+      "owner": "UNKNOWN",
+      "status": "unknown",
+      "reviewed_at": "2026-01-01T00:00:00+00:00",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "exec-plans",
+      "path": "docs/exec-plans/index.md",
+      "interface": "H14",
+      "owner": "UNKNOWN",
+      "status": "unknown",
+      "reviewed_at": "2026-01-01T00:00:00+00:00",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "maintainability",
+      "path": "docs/maintainability/index.md",
+      "interface": "H15",
+      "owner": "UNKNOWN",
+      "status": "unknown",
+      "reviewed_at": "2026-01-01T00:00:00+00:00",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "feedback",
+      "path": "docs/feedback/index.md",
+      "interface": "H16",
+      "owner": "UNKNOWN",
+      "status": "unknown",
+      "reviewed_at": "2026-01-01T00:00:00+00:00",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "assets",
+      "path": "docs/assets/index.md",
+      "interface": "H17",
+      "owner": "UNKNOWN",
+      "status": "unknown",
+      "reviewed_at": "2026-01-01T00:00:00+00:00",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "reuse",
+      "path": "docs/reuse/index.md",
+      "interface": "H18",
+      "owner": "UNKNOWN",
+      "status": "unknown",
+      "reviewed_at": "2026-01-01T00:00:00+00:00",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "lifecycle",
+      "path": "docs/lifecycle/index.md",
+      "interface": "H19",
+      "owner": "UNKNOWN",
+      "status": "unknown",
+      "reviewed_at": "2026-01-01T00:00:00+00:00",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "quality",
+      "path": "docs/quality/index.md",
+      "interface": "H20",
+      "owner": "UNKNOWN",
+      "status": "unknown",
+      "reviewed_at": "2026-01-01T00:00:00+00:00",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "garden",
+      "path": "docs/garden/index.md",
+      "interface": "H21",
+      "owner": "UNKNOWN",
+      "status": "unknown",
+      "reviewed_at": "2026-01-01T00:00:00+00:00",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "impact",
+      "path": "docs/impact/index.md",
+      "interface": "H22",
+      "owner": "UNKNOWN",
+      "status": "unknown",
+      "reviewed_at": "2026-01-01T00:00:00+00:00",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "standards",
+      "path": "docs/standards/index.md",
+      "interface": "H23",
+      "owner": "UNKNOWN",
+      "status": "unknown",
+      "reviewed_at": "2026-01-01T00:00:00+00:00",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "evals",
+      "path": "docs/evals/index.md",
+      "interface": "H24",
+      "owner": "UNKNOWN",
+      "status": "unknown",
+      "reviewed_at": "2026-01-01T00:00:00+00:00",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "governance",
+      "path": "docs/governance/index.md",
+      "interface": "H25",
+      "owner": "UNKNOWN",
+      "status": "unknown",
+      "reviewed_at": "2026-01-01T00:00:00+00:00",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "evolution",
+      "path": "docs/evolution/index.md",
+      "interface": "H26",
+      "owner": "UNKNOWN",
+      "status": "unknown",
+      "reviewed_at": "2026-01-01T00:00:00+00:00",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ]
+}

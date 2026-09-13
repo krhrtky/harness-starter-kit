@@ -1,0 +1,7 @@
+{
+  "write": {
+    "app/AGENTS.md": "# Local routing\nRead the order state invariant before changing this module.\n",
+    "app/internal/AGENTS.override.md": "# Internal routing\nPreserve the public order cancellation contract.\n"
+  },
+  "expected": "pass"
+}

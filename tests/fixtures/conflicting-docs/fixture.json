@@ -1,0 +1,4 @@
+{
+  "semantic_contradiction": "The state invariant conflicts with the API acceptance statement.",
+  "expected": "review.unresolved"
+}

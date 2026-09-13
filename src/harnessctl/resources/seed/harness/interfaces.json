@@ -1,0 +1,383 @@
+{
+  "schema_version": 1,
+  "interfaces": [
+    {
+      "id": "H00",
+      "name": "Outcome",
+      "family": "delivery",
+      "owner": "UNKNOWN",
+      "readiness": 1,
+      "sources": [
+        "docs/product/index.md"
+      ],
+      "capabilities": [],
+      "knowledge": [
+        "product"
+      ]
+    },
+    {
+      "id": "H01",
+      "name": "Domain",
+      "family": "delivery",
+      "owner": "UNKNOWN",
+      "readiness": 1,
+      "sources": [
+        "docs/domain/index.md"
+      ],
+      "capabilities": [],
+      "knowledge": [
+        "domain"
+      ]
+    },
+    {
+      "id": "H02",
+      "name": "Architecture",
+      "family": "delivery",
+      "owner": "UNKNOWN",
+      "readiness": 1,
+      "sources": [
+        "docs/architecture/index.md"
+      ],
+      "capabilities": [],
+      "knowledge": [
+        "architecture"
+      ]
+    },
+    {
+      "id": "H03",
+      "name": "Contract",
+      "family": "delivery",
+      "owner": "UNKNOWN",
+      "readiness": 1,
+      "sources": [
+        "docs/contracts/index.md"
+      ],
+      "capabilities": [],
+      "knowledge": [
+        "contracts"
+      ]
+    },
+    {
+      "id": "H04",
+      "name": "Data",
+      "family": "delivery",
+      "owner": "UNKNOWN",
+      "readiness": 1,
+      "sources": [
+        "docs/data/index.md"
+      ],
+      "capabilities": [],
+      "knowledge": [
+        "data"
+      ]
+    },
+    {
+      "id": "H05",
+      "name": "Security",
+      "family": "delivery",
+      "owner": "UNKNOWN",
+      "readiness": 1,
+      "sources": [
+        "docs/security/index.md"
+      ],
+      "capabilities": [],
+      "knowledge": [
+        "security"
+      ]
+    },
+    {
+      "id": "H06",
+      "name": "Reliability",
+      "family": "delivery",
+      "owner": "UNKNOWN",
+      "readiness": 1,
+      "sources": [
+        "docs/reliability/index.md"
+      ],
+      "capabilities": [],
+      "knowledge": [
+        "reliability"
+      ]
+    },
+    {
+      "id": "H07",
+      "name": "UX",
+      "family": "delivery",
+      "owner": "UNKNOWN",
+      "readiness": 1,
+      "sources": [
+        "docs/ux/index.md"
+      ],
+      "capabilities": [],
+      "knowledge": [
+        "ux"
+      ]
+    },
+    {
+      "id": "H08",
+      "name": "Observability",
+      "family": "delivery",
+      "owner": "UNKNOWN",
+      "readiness": 1,
+      "sources": [
+        "docs/observability/index.md"
+      ],
+      "capabilities": [],
+      "knowledge": [
+        "observability"
+      ]
+    },
+    {
+      "id": "H09",
+      "name": "Verification",
+      "family": "delivery",
+      "owner": "UNKNOWN",
+      "readiness": 1,
+      "sources": [
+        "docs/verification/index.md"
+      ],
+      "capabilities": [],
+      "knowledge": [
+        "verification"
+      ]
+    },
+    {
+      "id": "H10",
+      "name": "Development Environment",
+      "family": "delivery",
+      "owner": "UNKNOWN",
+      "readiness": 1,
+      "sources": [
+        "docs/environment/index.md"
+      ],
+      "capabilities": [],
+      "knowledge": [
+        "environment"
+      ]
+    },
+    {
+      "id": "H11",
+      "name": "Delivery",
+      "family": "delivery",
+      "owner": "UNKNOWN",
+      "readiness": 1,
+      "sources": [
+        "docs/delivery/index.md"
+      ],
+      "capabilities": [],
+      "knowledge": [
+        "delivery"
+      ]
+    },
+    {
+      "id": "H12",
+      "name": "Authority",
+      "family": "delivery",
+      "owner": "UNKNOWN",
+      "readiness": 1,
+      "sources": [
+        "docs/authority/index.md"
+      ],
+      "capabilities": [],
+      "knowledge": [
+        "authority"
+      ]
+    },
+    {
+      "id": "H13",
+      "name": "Knowledge",
+      "family": "delivery",
+      "owner": "UNKNOWN",
+      "readiness": 1,
+      "sources": [
+        "docs/knowledge/index.md"
+      ],
+      "capabilities": [],
+      "knowledge": [
+        "knowledge"
+      ]
+    },
+    {
+      "id": "H14",
+      "name": "Work",
+      "family": "delivery",
+      "owner": "UNKNOWN",
+      "readiness": 1,
+      "sources": [
+        "docs/exec-plans/index.md"
+      ],
+      "capabilities": [],
+      "knowledge": [
+        "exec-plans"
+      ]
+    },
+    {
+      "id": "H15",
+      "name": "Maintainability",
+      "family": "delivery",
+      "owner": "UNKNOWN",
+      "readiness": 1,
+      "sources": [
+        "docs/maintainability/index.md"
+      ],
+      "capabilities": [],
+      "knowledge": [
+        "maintainability"
+      ]
+    },
+    {
+      "id": "H16",
+      "name": "Feedback",
+      "family": "delivery",
+      "owner": "UNKNOWN",
+      "readiness": 1,
+      "sources": [
+        "docs/feedback/index.md"
+      ],
+      "capabilities": [],
+      "knowledge": [
+        "feedback"
+      ]
+    },
+    {
+      "id": "H17",
+      "name": "Asset Catalog",
+      "family": "evolution",
+      "owner": "UNKNOWN",
+      "readiness": 1,
+      "sources": [
+        "docs/assets/index.md"
+      ],
+      "capabilities": [],
+      "knowledge": [
+        "assets"
+      ]
+    },
+    {
+      "id": "H18",
+      "name": "Reuse & Placement",
+      "family": "evolution",
+      "owner": "UNKNOWN",
+      "readiness": 1,
+      "sources": [
+        "docs/reuse/index.md"
+      ],
+      "capabilities": [],
+      "knowledge": [
+        "reuse"
+      ]
+    },
+    {
+      "id": "H19",
+      "name": "Asset Lifecycle",
+      "family": "evolution",
+      "owner": "UNKNOWN",
+      "readiness": 1,
+      "sources": [
+        "docs/lifecycle/index.md"
+      ],
+      "capabilities": [],
+      "knowledge": [
+        "lifecycle"
+      ]
+    },
+    {
+      "id": "H20",
+      "name": "Global Fitness",
+      "family": "evolution",
+      "owner": "UNKNOWN",
+      "readiness": 1,
+      "sources": [
+        "docs/quality/index.md"
+      ],
+      "capabilities": [],
+      "knowledge": [
+        "quality"
+      ]
+    },
+    {
+      "id": "H21",
+      "name": "Consolidation & Garbage Collection",
+      "family": "evolution",
+      "owner": "UNKNOWN",
+      "readiness": 1,
+      "sources": [
+        "docs/garden/index.md"
+      ],
+      "capabilities": [],
+      "knowledge": [
+        "garden"
+      ]
+    },
+    {
+      "id": "H22",
+      "name": "Cross-System Impact",
+      "family": "evolution",
+      "owner": "UNKNOWN",
+      "readiness": 1,
+      "sources": [
+        "docs/impact/index.md"
+      ],
+      "capabilities": [],
+      "knowledge": [
+        "impact"
+      ]
+    },
+    {
+      "id": "H23",
+      "name": "Engineering Standards",
+      "family": "evolution",
+      "owner": "UNKNOWN",
+      "readiness": 1,
+      "sources": [
+        "docs/standards/index.md"
+      ],
+      "capabilities": [],
+      "knowledge": [
+        "standards"
+      ]
+    },
+    {
+      "id": "H24",
+      "name": "Agent Performance & Eval",
+      "family": "evolution",
+      "owner": "UNKNOWN",
+      "readiness": 1,
+      "sources": [
+        "docs/evals/index.md"
+      ],
+      "capabilities": [],
+      "knowledge": [
+        "evals"
+      ]
+    },
+    {
+      "id": "H25",
+      "name": "Governance & Ownership",
+      "family": "evolution",
+      "owner": "UNKNOWN",
+      "readiness": 1,
+      "sources": [
+        "docs/governance/index.md"
+      ],
+      "capabilities": [],
+      "knowledge": [
+        "governance"
+      ]
+    },
+    {
+      "id": "H26",
+      "name": "Evolution Strategy",
+      "family": "evolution",
+      "owner": "UNKNOWN",
+      "readiness": 1,
+      "sources": [
+        "docs/evolution/index.md"
+      ],
+      "capabilities": [],
+      "knowledge": [
+        "evolution"
+      ]
+    }
+  ]
+}

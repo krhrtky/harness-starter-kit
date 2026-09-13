@@ -1,0 +1,248 @@
+{
+  "schema_version": 1,
+  "documents": [
+    {
+      "id": "product",
+      "path": "docs/product/index.md",
+      "interface": "H00",
+      "owner": "harness-maintainers",
+      "status": "documented",
+      "reviewed_at": "2026-09-13T14:34:25.809543+00:00",
+      "content_digest": "4c54a92213cad14a8476b56158b5cedd02df336b4e056579ebcdb045c778463f"
+    },
+    {
+      "id": "domain",
+      "path": "docs/domain/index.md",
+      "interface": "H01",
+      "owner": "harness-maintainers",
+      "status": "documented",
+      "reviewed_at": "2026-09-13T14:34:25.809628+00:00",
+      "content_digest": "f7b805ecf0f63eebf7ffef565ef4b020a4aa72f8d15158e844bc3ea487dc2195"
+    },
+    {
+      "id": "architecture",
+      "path": "docs/architecture/index.md",
+      "interface": "H02",
+      "owner": "harness-maintainers",
+      "status": "documented",
+      "reviewed_at": "2026-09-13T14:34:25.809686+00:00",
+      "content_digest": "9116f348ac72cd5ceedeef99b961b1b4b9a41f59bc95cd91123fa1766e10a75f"
+    },
+    {
+      "id": "contracts",
+      "path": "docs/contracts/index.md",
+      "interface": "H03",
+      "owner": "harness-maintainers",
+      "status": "documented",
+      "reviewed_at": "2026-09-13T14:34:25.809746+00:00",
+      "content_digest": "1bdc1c4c0faff294345897ae1c41cfd46eebe054dec0fd187cd03e0e93515043"
+    },
+    {
+      "id": "data",
+      "path": "docs/data/index.md",
+      "interface": "H04",
+      "owner": "harness-maintainers",
+      "status": "documented",
+      "reviewed_at": "2026-09-13T14:34:25.809805+00:00",
+      "content_digest": "f2491087d6b1a64fd60fcc4258071d25ac92f1d300dea237c9e66520e1f90001"
+    },
+    {
+      "id": "security",
+      "path": "docs/security/index.md",
+      "interface": "H05",
+      "owner": "harness-maintainers",
+      "status": "documented",
+      "reviewed_at": "2026-09-13T14:34:25.809863+00:00",
+      "content_digest": "4519564dacc025e1d1eee81ffb2762e7a600e85b544739955de63f5f6ebe9d46"
+    },
+    {
+      "id": "reliability",
+      "path": "docs/reliability/index.md",
+      "interface": "H06",
+      "owner": "harness-maintainers",
+      "status": "documented",
+      "reviewed_at": "2026-09-13T14:34:25.809915+00:00",
+      "content_digest": "84a619467f542b3b4763ea838f548ea8b09c0e9be6000a6b365fe12d9a744821"
+    },
+    {
+      "id": "ux",
+      "path": "docs/ux/index.md",
+      "interface": "H07",
+      "owner": "harness-maintainers",
+      "status": "documented",
+      "reviewed_at": "2026-09-13T14:34:25.809969+00:00",
+      "content_digest": "91752362093c08475ca0e2ee5576aac5bd0b9d2b07a9f97204e2276976a8915a"
+    },
+    {
+      "id": "observability",
+      "path": "docs/observability/index.md",
+      "interface": "H08",
+      "owner": "harness-maintainers",
+      "status": "documented",
+      "reviewed_at": "2026-09-13T14:34:25.810027+00:00",
+      "content_digest": "356f1ad7861c8b44bae9cb2cc614979b90d92ceba1542a7d9ab9404b35f5a4fb"
+    },
+    {
+      "id": "verification",
+      "path": "docs/verification/index.md",
+      "interface": "H09",
+      "owner": "harness-maintainers",
+      "status": "documented",
+      "reviewed_at": "2026-09-13T14:34:25.810085+00:00",
+      "content_digest": "6ff37f7c4cb12795c273aec78c17ea1258cc161e8a46f505458a8c505b675eb8"
+    },
+    {
+      "id": "environment",
+      "path": "docs/environment/index.md",
+      "interface": "H10",
+      "owner": "harness-maintainers",
+      "status": "documented",
+      "reviewed_at": "2026-09-13T14:34:25.810141+00:00",
+      "content_digest": "dca6c7c7a2e264a67059bfc236b379175da01f0c9ad2d51fc7e6da164960992a"
+    },
+    {
+      "id": "delivery",
+      "path": "docs/delivery/index.md",
+      "interface": "H11",
+      "owner": "harness-maintainers",
+      "status": "documented",
+      "reviewed_at": "2026-09-13T14:34:25.810193+00:00",
+      "content_digest": "74887e1a6e41eb4c74c301adaa0e6273fd993c6695925f6eedd2c3a66cc41248"
+    },
+    {
+      "id": "authority",
+      "path": "docs/authority/index.md",
+      "interface": "H12",
+      "owner": "harness-maintainers",
+      "status": "documented",
+      "reviewed_at": "2026-09-13T14:34:25.810247+00:00",
+      "content_digest": "080dbf8cb29e2067b1e6c5665ad79b3925e2e768eece47d32e3a9a198fd629f5"
+    },
+    {
+      "id": "knowledge",
+      "path": "docs/knowledge/index.md",
+      "interface": "H13",
+      "owner": "harness-maintainers",
+      "status": "documented",
+      "reviewed_at": "2026-09-13T14:34:25.810298+00:00",
+      "content_digest": "094057160a47fc5376d271aab0bb2cb93a23d7f0adbed89c4400c2a3f011961f"
+    },
+    {
+      "id": "exec-plans",
+      "path": "docs/exec-plans/index.md",
+      "interface": "H14",
+      "owner": "harness-maintainers",
+      "status": "documented",
+      "reviewed_at": "2026-09-13T14:34:25.810353+00:00",
+      "content_digest": "8b68f49189e2196794dae98f631446c1f33db30e1455fb25d448f2a5be1a3b06"
+    },
+    {
+      "id": "maintainability",
+      "path": "docs/maintainability/index.md",
+      "interface": "H15",
+      "owner": "harness-maintainers",
+      "status": "documented",
+      "reviewed_at": "2026-09-13T14:34:25.810404+00:00",
+      "content_digest": "d2e48a7093583bf75a1650715c80bba4d5227c2a35422124646838ad217933d3"
+    },
+    {
+      "id": "feedback",
+      "path": "docs/feedback/index.md",
+      "interface": "H16",
+      "owner": "harness-maintainers",
+      "status": "documented",
+      "reviewed_at": "2026-09-13T14:34:25.810458+00:00",
+      "content_digest": "8ef5cc29ac9e194cc970bdf0a671969353e5df51bd10dd5bf57833ee353297e5"
+    },
+    {
+      "id": "assets",
+      "path": "docs/assets/index.md",
+      "interface": "H17",
+      "owner": "harness-maintainers",
+      "status": "documented",
+      "reviewed_at": "2026-09-13T14:34:25.810507+00:00",
+      "content_digest": "2f208fb9f863786e687636780ca70325eb3c4c5ff57f24031acb028a1d2c98a7"
+    },
+    {
+      "id": "reuse",
+      "path": "docs/reuse/index.md",
+      "interface": "H18",
+      "owner": "harness-maintainers",
+      "status": "documented",
+      "reviewed_at": "2026-09-13T14:34:25.810561+00:00",
+      "content_digest": "9c0124dc41efcf425e3a69f7c36e23f0ba3fca73b6ef484e8ce307b26fcddb0e"
+    },
+    {
+      "id": "lifecycle",
+      "path": "docs/lifecycle/index.md",
+      "interface": "H19",
+      "owner": "harness-maintainers",
+      "status": "documented",
+      "reviewed_at": "2026-09-13T14:34:25.810610+00:00",
+      "content_digest": "f8edf204743cd74c457c10948be9db2518db2c9127284ce386c7febf215d15cc"
+    },
+    {
+      "id": "quality",
+      "path": "docs/quality/index.md",
+      "interface": "H20",
+      "owner": "harness-maintainers",
+      "status": "documented",
+      "reviewed_at": "2026-09-13T14:34:25.810664+00:00",
+      "content_digest": "881f329d1726fcea5a185b4ebfb2ba34eedde3913104f4a96aa5a7c4fc568181"
+    },
+    {
+      "id": "garden",
+      "path": "docs/garden/index.md",
+      "interface": "H21",
+      "owner": "harness-maintainers",
+      "status": "documented",
+      "reviewed_at": "2026-09-13T14:34:25.810712+00:00",
+      "content_digest": "90e60afbbf268ce915fb2cbaef55ed0e45e3c34bebe9e862504f28e246eaaa9f"
+    },
+    {
+      "id": "impact",
+      "path": "docs/impact/index.md",
+      "interface": "H22",
+      "owner": "harness-maintainers",
+      "status": "documented",
+      "reviewed_at": "2026-09-13T14:34:25.810761+00:00",
+      "content_digest": "2690db994fd1608db162e7ab0b7cca64fce317081962b2212bf31dde75849c23"
+    },
+    {
+      "id": "standards",
+      "path": "docs/standards/index.md",
+      "interface": "H23",
+      "owner": "harness-maintainers",
+      "status": "documented",
+      "reviewed_at": "2026-09-13T14:34:25.810809+00:00",
+      "content_digest": "f792cc9436783713bb3dafc8166a25f0f54969a84ab0506fd61b8740e4ddd9f7"
+    },
+    {
+      "id": "evals",
+      "path": "docs/evals/index.md",
+      "interface": "H24",
+      "owner": "harness-maintainers",
+      "status": "documented",
+      "reviewed_at": "2026-09-13T14:34:25.810856+00:00",
+      "content_digest": "9af089fd2696e1ee65f4388b496ddc6e798e874fd8bf25d9e9de350707e2e974"
+    },
+    {
+      "id": "governance",
+      "path": "docs/governance/index.md",
+      "interface": "H25",
+      "owner": "harness-maintainers",
+      "status": "documented",
+      "reviewed_at": "2026-09-13T14:34:25.810909+00:00",
+      "content_digest": "0d9d9ca197d04e61130880b3cc4b19d96614d58dd9fa9dbd3f9a78a07fd8ec77"
+    },
+    {
+      "id": "evolution",
+      "path": "docs/evolution/index.md",
+      "interface": "H26",
+      "owner": "harness-maintainers",
+      "status": "documented",
+      "reviewed_at": "2026-09-13T14:34:25.810957+00:00",
+      "content_digest": "0c24f8f36591121adbbd0c6cbe6082ea012142d3d4a8a723e9a48b236dc2a1a2"
+    }
+  ]
+}

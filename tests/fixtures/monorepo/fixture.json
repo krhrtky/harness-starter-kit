@@ -1,0 +1,8 @@
+{
+  "write": {
+    "packages/catalog/model.py": "PRODUCT = \"fixture\"\n",
+    "packages/billing/model.py": "CURRENCY = \"JPY\"\n"
+  },
+  "outside_change": "packages/billing/model.py",
+  "expected": "scope.exceeded"
+}

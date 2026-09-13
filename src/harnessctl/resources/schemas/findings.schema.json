@@ -1,0 +1,177 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://harness.local/schema/v1/findings.schema.json",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "schema_version": {
+            "const": 1
+          },
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,99}$"
+          },
+          "task": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,99}$"
+          },
+          "criterion": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,99}$"
+          },
+          "view": {
+            "enum": [
+              "entailment",
+              "contradiction",
+              "counterexample"
+            ]
+          },
+          "interface": {
+            "enum": [
+              "H00",
+              "H01",
+              "H02",
+              "H03",
+              "H04",
+              "H05",
+              "H06",
+              "H07",
+              "H08",
+              "H09",
+              "H10",
+              "H11",
+              "H12",
+              "H13",
+              "H14",
+              "H15",
+              "H16",
+              "H17",
+              "H18",
+              "H19",
+              "H20",
+              "H21",
+              "H22",
+              "H23",
+              "H24",
+              "H25",
+              "H26"
+            ]
+          },
+          "severity": {
+            "enum": [
+              "blocking",
+              "warning",
+              "info"
+            ]
+          },
+          "claim": {
+            "type": "string",
+            "minLength": 1
+          },
+          "premises": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*\\\\).+$"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "counterexamples_considered": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "conclusion": {
+            "enum": [
+              "pass",
+              "fail",
+              "unknown"
+            ]
+          },
+          "confidence": {
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ]
+          },
+          "contradictions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0,
+            "uniqueItems": true
+          },
+          "unsupported_assumptions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0,
+            "uniqueItems": true
+          },
+          "reviewer": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_digest": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "required": [
+          "schema_version",
+          "id",
+          "task",
+          "criterion",
+          "view",
+          "interface",
+          "severity",
+          "claim",
+          "premises",
+          "evidence",
+          "counterexamples_considered",
+          "conclusion",
+          "confidence",
+          "contradictions",
+          "unsupported_assumptions",
+          "reviewer",
+          "source_digest"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "schema_version",
+    "findings"
+  ],
+  "additionalProperties": false
+}

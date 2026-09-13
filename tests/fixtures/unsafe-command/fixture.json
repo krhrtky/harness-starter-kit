@@ -1,0 +1,14 @@
+{
+  "patches": [
+    {
+      "file": "capabilities",
+      "path": [
+        "capabilities",
+        0,
+        "cwd"
+      ],
+      "value": "../escape"
+    }
+  ],
+  "expected": "invalid"
+}
