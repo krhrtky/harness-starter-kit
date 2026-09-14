@@ -24,3 +24,7 @@ Semantic findingは根拠・反例・結論を監査するための形式であ�
 
 CLIは常にJSON、exit 0=pass、1=gate blocker、2=invalid input。`--root`はsubcommandの前に置く。
 プロセス実行はregistryのenabledなargvのみ。実行sandboxや認証基盤はホスト/CI側が提供する。
+
+## 検証機構の配置
+
+[検証の3分類と接続契約](verification.md)に従い、独自の受入判断とtool・言語側の検証機構を分ける。`harnessctl usage verification`で配布版の全文を取得できる。

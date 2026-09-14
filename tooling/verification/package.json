@@ -1,0 +1,8 @@
+{
+  "name": "harness-verification-tools",
+  "private": true,
+  "version": "1.0.0",
+  "dependencies": {
+    "@informalsystems/quint": "0.32.0"
+  }
+}

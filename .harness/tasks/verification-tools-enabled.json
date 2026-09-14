@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "id": "VERIFY-TOOLS-ENABLED-1",
+  "outcome": "Confirm registered Quint/Apalache and Hypothesis capabilities through Harness Evidence and delivery gates",
+  "non_goals": [
+    "Install every candidate tool",
+    "Change production gates or claim model-to-code equivalence proof",
+    "Publish release or modify SDLC/Vault"
+  ],
+  "acceptance": [
+    {
+      "id": "AC-CONNECT",
+      "statement": "The registered formal and property profiles execute successfully and are consumed as required evidence",
+      "capabilities": [
+        "verify.formal",
+        "verify.properties",
+        "test.unit"
+      ]
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "reasons": [
+      "New validation boundary and distributed operator guidance; existing process and delivery contracts remain unchanged"
+    ]
+  },
+  "affected_interfaces": [
+    "H00",
+    "H02",
+    "H03",
+    "H09",
+    "H10",
+    "H11",
+    "H13",
+    "H14",
+    "H17",
+    "H18",
+    "H20",
+    "H26"
+  ],
+  "scope": [
+    "verification/**",
+    "tooling/verification/**"
+  ],
+  "constraints": [
+    "No source, policy or capability changes after preflight",
+    "Use managed process groups and preserve failed or missing evidence"
+  ],
+  "required_capabilities": [
+    "test.unit",
+    "verify.formal",
+    "verify.properties"
+  ],
+  "unknowns": [],
+  "asset_analysis": {
+    "searched_capabilities": [
+      "harness.gates",
+      "harness.contracts",
+      "harness.adapt",
+      "harness.verification-tools"
+    ],
+    "reused": [
+      "harness.cli",
+      "harness.schemas",
+      "harness-adapt",
+      "harness.verification-tools"
+    ],
+    "extended": [],
+    "new_assets": [],
+    "duplicates_considered": [
+      {
+        "asset": "harness.cli",
+        "decision": "reuse",
+        "reason": "Consume the installed and validated profile through existing gates"
+      },
+      {
+        "asset": "harness.schemas",
+        "decision": "reuse",
+        "reason": "Consume the installed and validated profile through existing gates"
+      },
+      {
+        "asset": "harness-adapt",
+        "decision": "reuse",
+        "reason": "Consume the installed and validated profile through existing gates"
+      },
+      {
+        "asset": "harness.verification-tools",
+        "decision": "reuse",
+        "reason": "Consume the installed and validated profile through existing gates"
+      }
+    ],
+    "consolidation_opportunities": []
+  },
+  "placement": [
+    {
+      "path": "verification/**",
+      "reason": "Read-only verification of the installed profile",
+      "target_alignment": "Specialist execution remains behind process adapter"
+    },
+    {
+      "path": "tooling/verification/**",
+      "reason": "Read-only verification of the installed profile",
+      "target_alignment": "Specialist execution remains behind process adapter"
+    }
+  ],
+  "cross_system_impact": {
+    "consumers": [],
+    "reason": "No registered external consumers; exercise installed CLI, seed distribution and existing fixtures"
+  },
+  "reviewer": "harness-maintainers"
+}

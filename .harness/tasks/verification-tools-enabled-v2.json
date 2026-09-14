@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "id": "VERIFY-TOOLS-ENABLED-2",
+  "outcome": "Use the registered verification tools with a fixed bundled test evaluator and no Rust evaluator acquisition during normal validation",
+  "non_goals": [
+    "Install every candidate tool",
+    "Change production gates or claim model-to-code equivalence proof",
+    "Publish release or modify SDLC/Vault"
+  ],
+  "acceptance": [
+    {
+      "id": "AC-CONNECT",
+      "statement": "The registered formal and property profiles execute successfully and are consumed as required evidence",
+      "capabilities": [
+        "verify.formal",
+        "verify.properties",
+        "test.unit"
+      ]
+    },
+    {
+      "id": "AC-NETWORK",
+      "statement": "Default model reachability tests explicitly use the bundled TypeScript evaluator and pass without a Rust evaluator in QUINT_HOME",
+      "capabilities": [
+        "verify.formal"
+      ]
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "reasons": [
+      "New validation boundary and distributed operator guidance; existing process and delivery contracts remain unchanged"
+    ]
+  },
+  "affected_interfaces": [
+    "H00",
+    "H02",
+    "H03",
+    "H09",
+    "H10",
+    "H11",
+    "H13",
+    "H14",
+    "H17",
+    "H18",
+    "H20",
+    "H26"
+  ],
+  "scope": [
+    "tooling/verification/tools.py",
+    "docs/harness/verification-tools.md",
+    "src/harnessctl/resources/seed/docs/harness/verification-tools.md",
+    "docs/decisions/ADR-004-verification-tools.md"
+  ],
+  "constraints": [
+    "No policy or capability changes after preflight",
+    "Preserve producer failures and managed process groups"
+  ],
+  "required_capabilities": [
+    "test.unit",
+    "verify.formal",
+    "verify.properties"
+  ],
+  "unknowns": [],
+  "asset_analysis": {
+    "searched_capabilities": [
+      "harness.gates",
+      "harness.contracts",
+      "harness.adapt",
+      "harness.verification-tools"
+    ],
+    "reused": [
+      "harness.cli",
+      "harness.schemas",
+      "harness-adapt"
+    ],
+    "extended": [
+      "harness.verification-tools"
+    ],
+    "new_assets": [],
+    "duplicates_considered": [
+      {
+        "asset": "harness.cli",
+        "decision": "reuse",
+        "reason": "Consume the installed and validated profile through existing gates"
+      },
+      {
+        "asset": "harness.schemas",
+        "decision": "reuse",
+        "reason": "Consume the installed and validated profile through existing gates"
+      },
+      {
+        "asset": "harness-adapt",
+        "decision": "reuse",
+        "reason": "Consume the installed and validated profile through existing gates"
+      },
+      {
+        "asset": "harness.verification-tools",
+        "decision": "extend",
+        "reason": "Pin the reachability evaluator to avoid implicit Rust acquisition"
+      }
+    ],
+    "consolidation_opportunities": []
+  },
+  "placement": [
+    {
+      "path": "tooling/verification/tools.py",
+      "reason": "Pin the evaluator selected by the tool profile and update usable commands",
+      "target_alignment": "Explicit pinned specialist tools without runtime fallback"
+    },
+    {
+      "path": "docs/harness/verification-tools.md",
+      "reason": "Pin the evaluator selected by the tool profile and update usable commands",
+      "target_alignment": "Explicit pinned specialist tools without runtime fallback"
+    },
+    {
+      "path": "src/harnessctl/resources/seed/docs/harness/verification-tools.md",
+      "reason": "Pin the evaluator selected by the tool profile and update usable commands",
+      "target_alignment": "Explicit pinned specialist tools without runtime fallback"
+    },
+    {
+      "path": "docs/decisions/ADR-004-verification-tools.md",
+      "reason": "Pin the evaluator selected by the tool profile and update usable commands",
+      "target_alignment": "Explicit pinned specialist tools without runtime fallback"
+    }
+  ],
+  "cross_system_impact": {
+    "consumers": [],
+    "reason": "No registered external consumers; exercise installed CLI, seed distribution and existing fixtures"
+  },
+  "reviewer": "harness-maintainers"
+}

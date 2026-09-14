@@ -72,3 +72,7 @@ knowledgeのレビュー後は`status`、timezone付き`reviewed_at`、ファイ
 argvはshell文字列ではない。環境変数はPATH/HOME/TMPDIR/SYSTEMROOT/LANG/LC_ALL/VIRTUAL_ENVのみ引き継ぎ、envを追加する。
 生成artifactは`.harness/runs/`へ出力する。source fileを更新するtestはstable_source gateで落ちる。
 長時間daemonやdev serverは検証用capabilityにせず、完了するhealth-check commandを登録する。
+
+## Tool result contracts
+
+`harnessctl result validate --schema verification/accepted.schema.json --input .harness/runs/tool-result.json`は初期化前にも利用できる。0はschema適合、1は不一致、2は入力・schema・参照の不正。[検証guide](verification.md)でproducer失敗・鮮度・意味の接続条件を確認する。

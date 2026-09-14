@@ -1,3 +1,6 @@
 # Decisions
 
-記録はまだありません。owner、根拠、対象範囲と完了条件を伴うレコードを追加する。
+- [ADR-001: distribution](ADR-001-distribution.md)
+- [ADR-002: binary discovery](ADR-002-binary-discovery.md)
+- [ADR-003: verification delegation](ADR-003-verification-delegation.md)
+- [ADR-004: executable verification tools](ADR-004-verification-tools.md)

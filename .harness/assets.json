@@ -17,7 +17,9 @@
       "version": "1.0.0",
       "consumers": [],
       "evidence": [
-        "tests/test_contracts.py"
+        "tests/test_contracts.py",
+        "tests/test_results.py",
+        "docs/decisions/ADR-003-verification-delegation.md"
       ],
       "deprecated_by": null,
       "constraints": []
@@ -59,7 +61,9 @@
       "version": "1.0.0",
       "consumers": [],
       "evidence": [
-        "tests/test_contracts.py"
+        "tests/test_contracts.py",
+        "tests/test_results.py",
+        "docs/decisions/ADR-003-verification-delegation.md"
       ],
       "deprecated_by": null,
       "constraints": []
@@ -80,7 +84,9 @@
       "version": "1.0.0",
       "consumers": [],
       "evidence": [
-        "tests/test_contracts.py"
+        "tests/test_contracts.py",
+        "tests/test_results.py",
+        "docs/decisions/ADR-003-verification-delegation.md"
       ],
       "deprecated_by": null,
       "constraints": []
@@ -273,6 +279,32 @@
       ],
       "deprecated_by": null,
       "constraints": []
+    },
+    {
+      "id": "harness.verification-tools",
+      "type": "tool",
+      "purpose": "Pinned model checking and real Evidence gate property testing",
+      "scope": [
+        "verification/**",
+        "tooling/verification/**"
+      ],
+      "status": "experimental",
+      "owner": "harness-maintainers",
+      "location": "tooling/verification",
+      "provides": [
+        "harness.verification-tools"
+      ],
+      "version": "1.0.0",
+      "consumers": [],
+      "evidence": [
+        "tests/test_verification_tools.py",
+        "docs/decisions/ADR-004-verification-tools.md"
+      ],
+      "deprecated_by": null,
+      "constraints": [
+        "Source checkout, POSIX, local Node/Java/Python required",
+        "Bounded model and generated tests are not model-to-code equivalence proof"
+      ]
     }
   ]
 }

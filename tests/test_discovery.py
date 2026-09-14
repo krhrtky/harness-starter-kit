@@ -26,6 +26,10 @@ class DiscoveryContracts(unittest.TestCase):
         task=next(a for a in catalog['preflight']['arguments'] if a['name']=='task')
         self.assertTrue(task['required'])
         self.assertEqual(['--task'],task['flags'])
+        result_arguments = {a['name']:a for a in catalog['result']['arguments']}
+        self.assertTrue(result_arguments['schema']['required'])
+        self.assertTrue(result_arguments['input']['required'])
+        self.assertIn('result validate', usage('verification',command_catalog())['content'])
 
     def test_unknown_names_cannot_read_arbitrary_files(self):
         for name in ['../../pyproject.toml','/etc/passwd','missing']:

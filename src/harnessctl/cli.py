@@ -14,6 +14,7 @@ from .checks import duplicate_candidates, knowledge_checks, quality_regressions,
 from .evolution import baseline, eval_report, promote, propose, record_feedback, transition
 from .gates import baseline_checks, delivery, evidence_checks, preflight, receipt_for, task_at
 from .model import model, search_assets
+from .results import validate_result
 from .storage import HarnessError, contained, digest, files, read, validate, write
 
 
@@ -26,6 +27,10 @@ def parser():
     i.add_argument('topic',nargs='?',default='index',help='index, commands, agent, cli, getting-started, operating-model or a Skill name')
     i = subs.add_parser('schema',help='Read embedded JSON Schema contracts without a repository')
     i.add_argument('name',nargs='?',help='Schema name; omit to list all names')
+    i = subs.add_parser('result',help='Validate tool JSON against a repository-owned result schema')
+    i.add_argument('action',choices=['validate'])
+    i.add_argument('--schema',required=True,help='Repository-relative Draft 2020-12 acceptance schema')
+    i.add_argument('--input',required=True,help='Repository-relative JSON result')
     i = subs.add_parser('init')
     i.add_argument('--mode',choices=['greenfield','brownfield'],default='greenfield')
     i.add_argument('--name',default='project')
@@ -97,6 +102,8 @@ def dispatch(a):
     root = Path(a.root).resolve()
     if not root.is_dir():
         raise HarnessError(f'Repository directory does not exist: {root}')
+    if a.command=='result':
+        return validate_result(root,a.schema,a.input)
     if a.command=='init':
         return result(**init(root,a.mode,a.name,a.owner))
     if a.command=='migrate':

@@ -88,8 +88,8 @@
       "interface": "H09",
       "owner": "harness-maintainers",
       "status": "documented",
-      "reviewed_at": "2026-09-13T14:34:25.810085+00:00",
-      "content_digest": "6ff37f7c4cb12795c273aec78c17ea1258cc161e8a46f505458a8c505b675eb8"
+      "reviewed_at": "2026-09-14T01:13:15.936034+00:00",
+      "content_digest": "c484e9e54256764f7b83ecb50d257938886c20ebba2730cd34a1e76f565995a9"
     },
     {
       "id": "environment",

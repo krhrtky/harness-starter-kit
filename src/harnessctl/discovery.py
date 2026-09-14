@@ -5,6 +5,8 @@ from . import __version__
 from .storage import HarnessError, RESOURCES, SCHEMAS, read
 
 GUIDES = {
+    'verification-tools': ('Quint・Apalache・Hypothesisのsetupと実行', 'verification-tools.md'),
+    'verification': ('検証の3分類・tool接続と結果契約', 'verification.md'),
     'getting-started': ('ユーザーとAgentの利用開始', 'getting-started.md'),
     'operating-model': ('3ループと責務', 'operating-model.md'),
     'cli': ('CLI操作と実行例', 'cli.md'),

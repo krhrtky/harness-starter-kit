@@ -1,0 +1,234 @@
+{
+  "schema_version": 1,
+  "id": "VERIFY-DELEGATION-1",
+  "outcome": "Select and rebut verification delegation approaches, integrate an offline result contract checker and distributable adoption guidance through the existing process adapter",
+  "non_goals": [
+    "Install all external tools or mandate Quint for every task",
+    "Implement a model checker, parser engine, cryptographic primitive or policy language",
+    "Change capability/policy/baseline schemas or weaken delivery gates",
+    "Merge or delete SDLC and Architecture Vault",
+    "Publish or deploy a release"
+  ],
+  "acceptance": [
+    {
+      "id": "AC-RESULT",
+      "statement": "Result validation accepts only JSON satisfying a repository-owned Draft 2020-12 schema; mismatch exits 1, invalid input or unsupported reference exits 2 without fetching remote resources",
+      "capabilities": [
+        "test.unit"
+      ]
+    },
+    {
+      "id": "AC-GATE",
+      "statement": "A wrapper retains producer failures and validates fresh results; logical rejection, unknown version and wrong subject cannot pass verify/delivery in integration fixtures",
+      "capabilities": [
+        "test.unit"
+      ]
+    },
+    {
+      "id": "AC-COMPAT",
+      "statement": "Existing process capabilities and discovery remain functional; packaged usage, seed and local Skills explain the three ownership patterns and rejection of mandatory common envelopes",
+      "capabilities": [
+        "test.unit"
+      ]
+    },
+    {
+      "id": "AC-DECISION",
+      "statement": "ADR and operating guidance compare independent implementation, specialist tools and language delegation including counterarguments, bounded adoption and remaining guarantees",
+      "capabilities": [
+        "test.unit"
+      ]
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "reasons": [
+      "New validation boundary and distributed operator guidance; existing process and delivery contracts remain unchanged"
+    ]
+  },
+  "affected_interfaces": [
+    "H00",
+    "H02",
+    "H03",
+    "H09",
+    "H10",
+    "H11",
+    "H13",
+    "H14",
+    "H17",
+    "H18",
+    "H20",
+    "H26"
+  ],
+  "scope": [
+    "src/harnessctl/cli.py",
+    "src/harnessctl/results.py",
+    "src/harnessctl/discovery.py",
+    "src/harnessctl/resources/seed/docs/harness/**",
+    "src/harnessctl/resources/skills/harness-adapt/SKILL.md",
+    "src/harnessctl/resources/skills/harness-intake/SKILL.md",
+    ".agents/skills/harness-adapt/SKILL.md",
+    ".agents/skills/harness-intake/SKILL.md",
+    "tests/test_results.py",
+    "tests/test_discovery.py",
+    "tests/fixtures/delegated-result/**",
+    "docs/harness/**",
+    "docs/decisions/**",
+    "docs/verification/index.md",
+    "docs/exec-plans/verification-delegation.md",
+    ".harness/knowledge.json",
+    ".harness/assets.json",
+    "ARCHITECTURE.md"
+  ],
+  "constraints": [
+    "Use existing jsonschema evaluator, offline references only",
+    "Keep policy, baseline and enabled capabilities unchanged",
+    "Register no unrequested project-specific verification commands"
+  ],
+  "required_capabilities": [
+    "test.unit"
+  ],
+  "unknowns": [],
+  "asset_analysis": {
+    "searched_capabilities": [
+      "harness.gates",
+      "harness.contracts",
+      "harness.adapt",
+      "harness.bootstrap"
+    ],
+    "reused": [
+      "harness.schemas",
+      "harness-bootstrap"
+    ],
+    "extended": [
+      "harness.cli",
+      "harness.seed",
+      "harness-adapt"
+    ],
+    "new_assets": [],
+    "duplicates_considered": [
+      {
+        "asset": "harness.cli",
+        "decision": "extend",
+        "reason": "Extend the existing CLI, distribution or adaptation guidance"
+      },
+      {
+        "asset": "harness.schemas",
+        "decision": "reuse",
+        "reason": "Retain current schema and bootstrap contracts"
+      },
+      {
+        "asset": "harness.seed",
+        "decision": "extend",
+        "reason": "Extend the existing CLI, distribution or adaptation guidance"
+      },
+      {
+        "asset": "harness-adapt",
+        "decision": "extend",
+        "reason": "Extend the existing CLI, distribution or adaptation guidance"
+      },
+      {
+        "asset": "harness-bootstrap",
+        "decision": "reuse",
+        "reason": "Retain current schema and bootstrap contracts"
+      }
+    ],
+    "consolidation_opportunities": []
+  },
+  "placement": [
+    {
+      "path": "src/harnessctl/cli.py",
+      "reason": "Verification delegation implementation, acceptance evidence or packaged knowledge",
+      "target_alignment": "Language-neutral control plane; specialist mechanisms remain delegated"
+    },
+    {
+      "path": "src/harnessctl/results.py",
+      "reason": "Verification delegation implementation, acceptance evidence or packaged knowledge",
+      "target_alignment": "Language-neutral control plane; specialist mechanisms remain delegated"
+    },
+    {
+      "path": "src/harnessctl/discovery.py",
+      "reason": "Verification delegation implementation, acceptance evidence or packaged knowledge",
+      "target_alignment": "Language-neutral control plane; specialist mechanisms remain delegated"
+    },
+    {
+      "path": "src/harnessctl/resources/seed/docs/harness/**",
+      "reason": "Verification delegation implementation, acceptance evidence or packaged knowledge",
+      "target_alignment": "Language-neutral control plane; specialist mechanisms remain delegated"
+    },
+    {
+      "path": "src/harnessctl/resources/skills/harness-adapt/SKILL.md",
+      "reason": "Verification delegation implementation, acceptance evidence or packaged knowledge",
+      "target_alignment": "Language-neutral control plane; specialist mechanisms remain delegated"
+    },
+    {
+      "path": "src/harnessctl/resources/skills/harness-intake/SKILL.md",
+      "reason": "Verification delegation implementation, acceptance evidence or packaged knowledge",
+      "target_alignment": "Language-neutral control plane; specialist mechanisms remain delegated"
+    },
+    {
+      "path": ".agents/skills/harness-adapt/SKILL.md",
+      "reason": "Verification delegation implementation, acceptance evidence or packaged knowledge",
+      "target_alignment": "Language-neutral control plane; specialist mechanisms remain delegated"
+    },
+    {
+      "path": ".agents/skills/harness-intake/SKILL.md",
+      "reason": "Verification delegation implementation, acceptance evidence or packaged knowledge",
+      "target_alignment": "Language-neutral control plane; specialist mechanisms remain delegated"
+    },
+    {
+      "path": "tests/test_results.py",
+      "reason": "Verification delegation implementation, acceptance evidence or packaged knowledge",
+      "target_alignment": "Language-neutral control plane; specialist mechanisms remain delegated"
+    },
+    {
+      "path": "tests/test_discovery.py",
+      "reason": "Verification delegation implementation, acceptance evidence or packaged knowledge",
+      "target_alignment": "Language-neutral control plane; specialist mechanisms remain delegated"
+    },
+    {
+      "path": "tests/fixtures/delegated-result/**",
+      "reason": "Verification delegation implementation, acceptance evidence or packaged knowledge",
+      "target_alignment": "Language-neutral control plane; specialist mechanisms remain delegated"
+    },
+    {
+      "path": "docs/harness/**",
+      "reason": "Verification delegation implementation, acceptance evidence or packaged knowledge",
+      "target_alignment": "Language-neutral control plane; specialist mechanisms remain delegated"
+    },
+    {
+      "path": "docs/decisions/**",
+      "reason": "Verification delegation implementation, acceptance evidence or packaged knowledge",
+      "target_alignment": "Language-neutral control plane; specialist mechanisms remain delegated"
+    },
+    {
+      "path": "docs/verification/index.md",
+      "reason": "Verification delegation implementation, acceptance evidence or packaged knowledge",
+      "target_alignment": "Language-neutral control plane; specialist mechanisms remain delegated"
+    },
+    {
+      "path": "docs/exec-plans/verification-delegation.md",
+      "reason": "Verification delegation implementation, acceptance evidence or packaged knowledge",
+      "target_alignment": "Language-neutral control plane; specialist mechanisms remain delegated"
+    },
+    {
+      "path": ".harness/knowledge.json",
+      "reason": "Verification delegation implementation, acceptance evidence or packaged knowledge",
+      "target_alignment": "Language-neutral control plane; specialist mechanisms remain delegated"
+    },
+    {
+      "path": ".harness/assets.json",
+      "reason": "Verification delegation implementation, acceptance evidence or packaged knowledge",
+      "target_alignment": "Language-neutral control plane; specialist mechanisms remain delegated"
+    },
+    {
+      "path": "ARCHITECTURE.md",
+      "reason": "Verification delegation implementation, acceptance evidence or packaged knowledge",
+      "target_alignment": "Language-neutral control plane; specialist mechanisms remain delegated"
+    }
+  ],
+  "cross_system_impact": {
+    "consumers": [],
+    "reason": "No registered external consumers; exercise installed CLI, seed distribution and existing fixtures"
+  },
+  "reviewer": "harness-maintainers"
+}

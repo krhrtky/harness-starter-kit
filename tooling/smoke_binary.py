@@ -29,6 +29,13 @@ def smoke(binary):
         index=run('usage')
         for topic in index['topics']:run('usage',topic['id'])
         for name in run('schema')['schemas']:run('schema',name)
+        write(root/'accepted.schema.json',{'$schema':'https://json-schema.org/draft/2020-12/schema','type':'object','properties':{'status':{'const':'PASS'}},'required':['status']})
+        write(root/'result.json',{'status':'PASS'})
+        run('result','validate','--schema','accepted.schema.json','--input','result.json')
+        write(root/'result.json',{'status':'FAIL'})
+        run('result','validate','--schema','accepted.schema.json','--input','result.json',expected=1)
+        (root/'result.json').write_text('{invalid')
+        run('result','validate','--schema','accepted.schema.json','--input','result.json',expected=2)
         run('init','--owner','fixture-owner')
         run('doctor',expected=1)
         if len(list((root/'.agents/skills').glob('*/SKILL.md')))!=10:

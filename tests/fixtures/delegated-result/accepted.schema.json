@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schema_version": {"const": 1},
+    "subject": {"const": "fixture-v1"},
+    "decision": {"const": "PASS"}
+  },
+  "required": ["schema_version", "subject", "decision"],
+  "additionalProperties": false
+}

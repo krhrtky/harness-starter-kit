@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "id": "RELEASE-1-1-0",
+  "outcome": "Release CLI v1.1.0 with verified standalone result validation and optional source verification tools",
+  "non_goals": [
+    "Bundle external verification engines into the CLI",
+    "Change repository visibility"
+  ],
+  "acceptance": [
+    {
+      "id": "AC-RELEASE",
+      "statement": "Version metadata agrees, standalone smoke covers result acceptance and rejection, and all registered verification profiles pass",
+      "capabilities": [
+        "test.unit",
+        "verify.formal",
+        "verify.properties"
+      ]
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "reasons": [
+      "New validation boundary and distributed operator guidance; existing process and delivery contracts remain unchanged"
+    ]
+  },
+  "affected_interfaces": [
+    "H00",
+    "H02",
+    "H03",
+    "H09",
+    "H10",
+    "H11",
+    "H13",
+    "H14",
+    "H17",
+    "H18",
+    "H20",
+    "H26"
+  ],
+  "scope": [
+    "pyproject.toml",
+    "src/harnessctl/__init__.py",
+    "tooling/smoke_binary.py",
+    "docs/harness/release-notes.md"
+  ],
+  "constraints": [
+    "No policy or capability changes after preflight",
+    "Preserve producer failures and managed process groups"
+  ],
+  "required_capabilities": [
+    "test.unit",
+    "verify.formal",
+    "verify.properties"
+  ],
+  "unknowns": [],
+  "asset_analysis": {
+    "searched_capabilities": [
+      "harness.gates",
+      "harness.contracts",
+      "harness.adapt",
+      "harness.verification-tools"
+    ],
+    "reused": [
+      "harness.cli",
+      "harness.schemas",
+      "harness-adapt"
+    ],
+    "extended": [
+      "harness.verification-tools"
+    ],
+    "new_assets": [],
+    "duplicates_considered": [
+      {
+        "asset": "harness.cli",
+        "decision": "reuse",
+        "reason": "Consume the installed and validated profile through existing gates"
+      },
+      {
+        "asset": "harness.schemas",
+        "decision": "reuse",
+        "reason": "Consume the installed and validated profile through existing gates"
+      },
+      {
+        "asset": "harness-adapt",
+        "decision": "reuse",
+        "reason": "Consume the installed and validated profile through existing gates"
+      },
+      {
+        "asset": "harness.verification-tools",
+        "decision": "extend",
+        "reason": "Pin the reachability evaluator to avoid implicit Rust acquisition"
+      }
+    ],
+    "consolidation_opportunities": []
+  },
+  "placement": [
+    {
+      "path": "pyproject.toml",
+      "reason": "Prepare and validate the versioned binary release",
+      "target_alignment": "Existing four-platform release pipeline"
+    },
+    {
+      "path": "src/harnessctl/__init__.py",
+      "reason": "Prepare and validate the versioned binary release",
+      "target_alignment": "Existing four-platform release pipeline"
+    },
+    {
+      "path": "tooling/smoke_binary.py",
+      "reason": "Prepare and validate the versioned binary release",
+      "target_alignment": "Existing four-platform release pipeline"
+    },
+    {
+      "path": "docs/harness/release-notes.md",
+      "reason": "Prepare and validate the versioned binary release",
+      "target_alignment": "Existing four-platform release pipeline"
+    }
+  ],
+  "cross_system_impact": {
+    "consumers": [],
+    "reason": "No registered external consumers; exercise installed CLI, seed distribution and existing fixtures"
+  },
+  "reviewer": "harness-maintainers"
+}

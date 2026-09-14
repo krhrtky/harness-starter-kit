@@ -1,0 +1,4 @@
+# This profile uses the repository's .venv; production package dependencies stay unchanged.
+hypothesis==6.168.0
+sortedcontainers==2.4.0
+attrs==26.1.0

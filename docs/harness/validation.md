@@ -39,3 +39,7 @@ wheelを作り、別venvへinstallしてinitすることでschema/seed/Skillsが
 10 Skillsは`.agents/skills/harness-*`へ配置する。`SKILL.md`のname/descriptionと必要時の本文読込みを前提にする。
 形式は[OpenAIのSkillsドキュメント](https://learn.chatgpt.com/docs/build-skills)を参照した。
 CLIの機械判定とsemantic reasoningを混在させず、Skills内でschema validatorを再実装しない。
+
+## Delegated result contracts
+
+`tests/test_results.py`はresult validateと既存process adapterの接続を検査する。正常、FAIL/UNKNOWN、版・対象違い、不正JSON、参照不正、producer失敗、欠損・古い出力を確認し、受入schema変更後は既存source gateで証拠を無効化する。schema適合だけで動的contextや業務意味を保証しない。[配置・接続guide](verification.md)。

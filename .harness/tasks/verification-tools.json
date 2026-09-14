@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "id": "VERIFY-TOOLS-1",
+  "outcome": "Install pinned Quint/Apalache and Hypothesis locally, provide repeatable setup and execution, validate real failures and make verified profiles ready for Harness registration",
+  "non_goals": [
+    "Install every candidate tool",
+    "Change production gates or claim model-to-code equivalence proof",
+    "Publish release or modify SDLC/Vault"
+  ],
+  "acceptance": [
+    {
+      "id": "AC-SETUP",
+      "statement": "A documented setup command installs pinned dependencies in local managed directories and checks versions and Apalache archive integrity",
+      "capabilities": [
+        "test.unit"
+      ]
+    },
+    {
+      "id": "AC-FORMAL",
+      "statement": "Quint/Apalache verifies the Harness evidence acceptance model and detects the stale-evidence guard mutation with a saved counterexample",
+      "capabilities": [
+        "test.unit"
+      ]
+    },
+    {
+      "id": "AC-PROPERTY",
+      "statement": "Hypothesis executes action sequences against real Harness evidence gates and detects a simulated missing freshness check",
+      "capabilities": [
+        "test.unit"
+      ]
+    },
+    {
+      "id": "AC-RUN",
+      "statement": "Wrapper outputs include real tool exit codes, versions, model hashes or test settings; unavailable tools and unexpected failures do not become PASS",
+      "capabilities": [
+        "test.unit"
+      ]
+    },
+    {
+      "id": "AC-USAGE",
+      "statement": "User-facing commands, prerequisites, limits and capability registration are documented and offline-discoverable",
+      "capabilities": [
+        "test.unit"
+      ]
+    }
+  ],
+  "risk": {
+    "level": "medium",
+    "reasons": [
+      "New validation boundary and distributed operator guidance; existing process and delivery contracts remain unchanged"
+    ]
+  },
+  "affected_interfaces": [
+    "H00",
+    "H02",
+    "H03",
+    "H09",
+    "H10",
+    "H11",
+    "H13",
+    "H14",
+    "H17",
+    "H18",
+    "H20",
+    "H26"
+  ],
+  "scope": [
+    "tooling/verification/**",
+    "verification/**",
+    "tests/test_verification_tools.py",
+    "docs/harness/verification-tools.md",
+    "docs/harness/verification.md",
+    "src/harnessctl/resources/seed/docs/harness/verification-tools.md",
+    "src/harnessctl/resources/seed/docs/harness/verification.md",
+    "src/harnessctl/discovery.py",
+    "docs/decisions/ADR-004-verification-tools.md",
+    "docs/decisions/index.md",
+    "docs/exec-plans/verification-tools.md",
+    "docs/verification/index.md",
+    ".harness/knowledge.json",
+    ".harness/assets.json"
+  ],
+  "constraints": [
+    "Use existing jsonschema evaluator, offline references only",
+    "Keep policy, baseline and enabled capabilities unchanged",
+    "Register no unrequested project-specific verification commands"
+  ],
+  "required_capabilities": [
+    "test.unit"
+  ],
+  "unknowns": [],
+  "asset_analysis": {
+    "searched_capabilities": [
+      "harness.gates",
+      "harness.contracts",
+      "harness.adapt",
+      "harness.verification-tools"
+    ],
+    "reused": [
+      "harness.schemas",
+      "harness-adapt"
+    ],
+    "extended": [
+      "harness.cli"
+    ],
+    "new_assets": [
+      {
+        "id": "harness.verification-tools",
+        "provides": [
+          "harness.verification-tools"
+        ],
+        "path": "tooling/verification",
+        "reason": "Executable and pinned specialist tool profiles, distinct from the generic process gate"
+      }
+    ],
+    "duplicates_considered": [
+      {
+        "asset": "harness.cli",
+        "decision": "extend",
+        "reason": "Reuse established gates, contracts and connection guidance"
+      },
+      {
+        "asset": "harness.schemas",
+        "decision": "reuse",
+        "reason": "Reuse established gates, contracts and connection guidance"
+      },
+      {
+        "asset": "harness-adapt",
+        "decision": "reuse",
+        "reason": "Reuse established gates, contracts and connection guidance"
+      }
+    ],
+    "consolidation_opportunities": []
+  },
+  "placement": [
+    {
+      "path": "tooling/verification/**",
+      "reason": "Pinned tool profile, test or user-facing setup and operating evidence",
+      "target_alignment": "Generic process boundary with separately managed verification tools"
+    },
+    {
+      "path": "verification/**",
+      "reason": "Pinned tool profile, test or user-facing setup and operating evidence",
+      "target_alignment": "Generic process boundary with separately managed verification tools"
+    },
+    {
+      "path": "tests/test_verification_tools.py",
+      "reason": "Pinned tool profile, test or user-facing setup and operating evidence",
+      "target_alignment": "Generic process boundary with separately managed verification tools"
+    },
+    {
+      "path": "docs/harness/verification-tools.md",
+      "reason": "Pinned tool profile, test or user-facing setup and operating evidence",
+      "target_alignment": "Generic process boundary with separately managed verification tools"
+    },
+    {
+      "path": "docs/harness/verification.md",
+      "reason": "Pinned tool profile, test or user-facing setup and operating evidence",
+      "target_alignment": "Generic process boundary with separately managed verification tools"
+    },
+    {
+      "path": "src/harnessctl/resources/seed/docs/harness/verification-tools.md",
+      "reason": "Pinned tool profile, test or user-facing setup and operating evidence",
+      "target_alignment": "Generic process boundary with separately managed verification tools"
+    },
+    {
+      "path": "src/harnessctl/resources/seed/docs/harness/verification.md",
+      "reason": "Pinned tool profile, test or user-facing setup and operating evidence",
+      "target_alignment": "Generic process boundary with separately managed verification tools"
+    },
+    {
+      "path": "src/harnessctl/discovery.py",
+      "reason": "Pinned tool profile, test or user-facing setup and operating evidence",
+      "target_alignment": "Generic process boundary with separately managed verification tools"
+    },
+    {
+      "path": "docs/decisions/ADR-004-verification-tools.md",
+      "reason": "Pinned tool profile, test or user-facing setup and operating evidence",
+      "target_alignment": "Generic process boundary with separately managed verification tools"
+    },
+    {
+      "path": "docs/decisions/index.md",
+      "reason": "Pinned tool profile, test or user-facing setup and operating evidence",
+      "target_alignment": "Generic process boundary with separately managed verification tools"
+    },
+    {
+      "path": "docs/exec-plans/verification-tools.md",
+      "reason": "Pinned tool profile, test or user-facing setup and operating evidence",
+      "target_alignment": "Generic process boundary with separately managed verification tools"
+    },
+    {
+      "path": "docs/verification/index.md",
+      "reason": "Pinned tool profile, test or user-facing setup and operating evidence",
+      "target_alignment": "Generic process boundary with separately managed verification tools"
+    },
+    {
+      "path": ".harness/knowledge.json",
+      "reason": "Pinned tool profile, test or user-facing setup and operating evidence",
+      "target_alignment": "Generic process boundary with separately managed verification tools"
+    },
+    {
+      "path": ".harness/assets.json",
+      "reason": "Pinned tool profile, test or user-facing setup and operating evidence",
+      "target_alignment": "Generic process boundary with separately managed verification tools"
+    }
+  ],
+  "cross_system_impact": {
+    "consumers": [],
+    "reason": "No registered external consumers; exercise installed CLI, seed distribution and existing fixtures"
+  },
+  "reviewer": "harness-maintainers"
+}

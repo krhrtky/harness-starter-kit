@@ -18,6 +18,42 @@
       "enabled": true,
       "env": {},
       "artifacts": []
+    },
+    {
+      "id": "verify.formal",
+      "adapter": "process",
+      "argv": [
+        ".venv/bin/python",
+        "tooling/verification/tools.py",
+        "formal"
+      ],
+      "cwd": ".",
+      "timeout_seconds": 300,
+      "enabled": true,
+      "env": {
+        "HARNESS_MANAGED_PROCESS_GROUP": "1"
+      },
+      "artifacts": [
+        ".harness/runs/verification-tools/formal.json"
+      ]
+    },
+    {
+      "id": "verify.properties",
+      "adapter": "process",
+      "argv": [
+        ".venv/bin/python",
+        "tooling/verification/tools.py",
+        "properties"
+      ],
+      "cwd": ".",
+      "timeout_seconds": 300,
+      "enabled": true,
+      "env": {
+        "HARNESS_MANAGED_PROCESS_GROUP": "1"
+      },
+      "artifacts": [
+        ".harness/runs/verification-tools/properties.json"
+      ]
     }
   ]
 }
