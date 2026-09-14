@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "id": "DOCS-CLI-1",
+  "outcome": "CLIだけを使う利用者・Agentが初期化前後に文書配置規約を取得し、導入先の正本と未決事項の扱いを判断できる",
+  "non_goals": [
+    "文章の意味を自動判定する新gate",
+    "公開済みバイナリの置換・リリース",
+    "既存文書の移動・分類変更"
+  ],
+  "acceptance": [
+    {
+      "id": "AC-DISCOVERY",
+      "statement": "usage一覧・helpからdocumentationを発見し、存在しないrepository rootでも配置規約全文をJSONで取得できる",
+      "capabilities": [
+        "test.unit"
+      ]
+    },
+    {
+      "id": "AC-ROUTING",
+      "statement": "usage agent・利用開始ガイド・文書を扱う同梱Skillsが配置規約の取得方法、導入先規約と同梱規約の優先関係を示す",
+      "capabilities": [
+        "test.unit"
+      ]
+    },
+    {
+      "id": "AC-PRESERVE",
+      "statement": "initが既存AGENTSと配置規約を保存したまま案内を提供し、同梱版が導入先の指示を上書きしないことを検証する",
+      "capabilities": [
+        "test.unit"
+      ]
+    }
+  ],
+  "risk": {
+    "level": "low",
+    "reasons": [
+      "既存の読取専用usageへtopicと案内を追加。実行権限・schema・gate基準は変更しない"
+    ]
+  },
+  "affected_interfaces": [
+    "H07",
+    "H09",
+    "H13",
+    "H17",
+    "H18"
+  ],
+  "scope": [
+    "src/harnessctl/discovery.py",
+    "src/harnessctl/cli.py",
+    "tests/test_discovery.py",
+    "docs/harness/agent-usage.md",
+    "docs/harness/getting-started.md",
+    "docs/harness/cli.md",
+    "src/harnessctl/resources/seed/docs/harness/agent-usage.md",
+    "src/harnessctl/resources/seed/docs/harness/getting-started.md",
+    "src/harnessctl/resources/seed/docs/harness/cli.md",
+    "src/harnessctl/resources/skills/harness-bootstrap/SKILL.md",
+    "src/harnessctl/resources/skills/harness-intake/SKILL.md",
+    "src/harnessctl/resources/skills/harness-plan/SKILL.md",
+    "src/harnessctl/resources/skills/harness-learn/SKILL.md",
+    "src/harnessctl/resources/skills/harness-garden/SKILL.md",
+    "src/harnessctl/resources/skills/harness-review/SKILL.md",
+    ".agents/skills/harness-bootstrap/SKILL.md",
+    ".agents/skills/harness-intake/SKILL.md",
+    ".agents/skills/harness-plan/SKILL.md",
+    ".agents/skills/harness-learn/SKILL.md",
+    ".agents/skills/harness-garden/SKILL.md",
+    ".agents/skills/harness-review/SKILL.md",
+    "docs/exec-plans/completed/documentation-cli.md"
+  ],
+  "constraints": [
+    "No project policy weakening",
+    "No guessed application commands"
+  ],
+  "required_capabilities": [
+    "test.unit"
+  ],
+  "unknowns": [],
+  "asset_analysis": {
+    "searched_capabilities": [
+      "harness.gates",
+      "harness.bootstrap"
+    ],
+    "reused": [
+      "harness-bootstrap"
+    ],
+    "extended": [
+      "harness.cli",
+      "harness.seed"
+    ],
+    "new_assets": [],
+    "duplicates_considered": [
+      {
+        "asset": "harness.cli",
+        "decision": "extend",
+        "reason": "既存usage dispatcherへtopicを登録し、別の文書取得機構を作らない"
+      },
+      {
+        "asset": "harness.seed",
+        "decision": "extend",
+        "reason": "既存配置規約の本文をそのまま配布・表示する"
+      },
+      {
+        "asset": "harness-bootstrap",
+        "decision": "reuse",
+        "reason": "非破壊initとpreserved確認手順を維持し案内のみ追加する"
+      }
+    ],
+    "consolidation_opportunities": []
+  },
+  "placement": [
+    {
+      "path": "src/harnessctl/discovery.py",
+      "reason": "CLIの文書発見・正本優先・初期化の案内と回帰検証。既存guideは更新し配置規約の本文を複製しない",
+      "target_alignment": "既存offline resource機構を使い契約とadapter境界を維持"
+    },
+    {
+      "path": "src/harnessctl/cli.py",
+      "reason": "CLIの文書発見・正本優先・初期化の案内と回帰検証。既存guideは更新し配置規約の本文を複製しない",
+      "target_alignment": "既存offline resource機構を使い契約とadapter境界を維持"
+    },
+    {
+      "path": "tests/test_discovery.py",
+      "reason": "CLIの文書発見・正本優先・初期化の案内と回帰検証。既存guideは更新し配置規約の本文を複製しない",
+      "target_alignment": "既存offline resource機構を使い契約とadapter境界を維持"
+    },
+    {
+      "path": "docs/harness/agent-usage.md",
+      "reason": "CLIの文書発見・正本優先・初期化の案内と回帰検証。既存guideは更新し配置規約の本文を複製しない",
+      "target_alignment": "既存offline resource機構を使い契約とadapter境界を維持"
+    },
+    {
+      "path": "docs/harness/getting-started.md",
+      "reason": "CLIの文書発見・正本優先・初期化の案内と回帰検証。既存guideは更新し配置規約の本文を複製しない",
+      "target_alignment": "既存offline resource機構を使い契約とadapter境界を維持"
+    },
+    {
+      "path": "docs/harness/cli.md",
+      "reason": "CLIの文書発見・正本優先・初期化の案内と回帰検証。既存guideは更新し配置規約の本文を複製しない",
+      "target_alignment": "既存offline resource機構を使い契約とadapter境界を維持"
+    },
+    {
+      "path": "src/harnessctl/resources/seed/docs/harness/agent-usage.md",
+      "reason": "CLIの文書発見・正本優先・初期化の案内と回帰検証。既存guideは更新し配置規約の本文を複製しない",
+      "target_alignment": "既存offline resource機構を使い契約とadapter境界を維持"
+    },
+    {
+      "path": "src/harnessctl/resources/seed/docs/harness/getting-started.md",
+      "reason": "CLIの文書発見・正本優先・初期化の案内と回帰検証。既存guideは更新し配置規約の本文を複製しない",
+      "target_alignment": "既存offline resource機構を使い契約とadapter境界を維持"
+    },
+    {
+      "path": "src/harnessctl/resources/seed/docs/harness/cli.md",
+      "reason": "CLIの文書発見・正本優先・初期化の案内と回帰検証。既存guideは更新し配置規約の本文を複製しない",
+      "target_alignment": "既存offline resource機構を使い契約とadapter境界を維持"
+    },
+    {
+      "path": "src/harnessctl/resources/skills/harness-bootstrap/SKILL.md",
+      "reason": "CLIの文書発見・正本優先・初期化の案内と回帰検証。既存guideは更新し配置規約の本文を複製しない",
+      "target_alignment": "既存offline resource機構を使い契約とadapter境界を維持"
+    },
+    {
+      "path": "src/harnessctl/resources/skills/harness-intake/SKILL.md",
+      "reason": "CLIの文書発見・正本優先・初期化の案内と回帰検証。既存guideは更新し配置規約の本文を複製しない",
+      "target_alignment": "既存offline resource機構を使い契約とadapter境界を維持"
+    },
+    {
+      "path": "src/harnessctl/resources/skills/harness-plan/SKILL.md",
+      "reason": "CLIの文書発見・正本優先・初期化の案内と回帰検証。既存guideは更新し配置規約の本文を複製しない",
+      "target_alignment": "既存offline resource機構を使い契約とadapter境界を維持"
+    },
+    {
+      "path": "src/harnessctl/resources/skills/harness-learn/SKILL.md",
+      "reason": "CLIの文書発見・正本優先・初期化の案内と回帰検証。既存guideは更新し配置規約の本文を複製しない",
+      "target_alignment": "既存offline resource機構を使い契約とadapter境界を維持"
+    },
+    {
+      "path": "src/harnessctl/resources/skills/harness-garden/SKILL.md",
+      "reason": "CLIの文書発見・正本優先・初期化の案内と回帰検証。既存guideは更新し配置規約の本文を複製しない",
+      "target_alignment": "既存offline resource機構を使い契約とadapter境界を維持"
+    },
+    {
+      "path": "src/harnessctl/resources/skills/harness-review/SKILL.md",
+      "reason": "CLIの文書発見・正本優先・初期化の案内と回帰検証。既存guideは更新し配置規約の本文を複製しない",
+      "target_alignment": "既存offline resource機構を使い契約とadapter境界を維持"
+    },
+    {
+      "path": ".agents/skills/harness-bootstrap/SKILL.md",
+      "reason": "CLIの文書発見・正本優先・初期化の案内と回帰検証。既存guideは更新し配置規約の本文を複製しない",
+      "target_alignment": "既存offline resource機構を使い契約とadapter境界を維持"
+    },
+    {
+      "path": ".agents/skills/harness-intake/SKILL.md",
+      "reason": "CLIの文書発見・正本優先・初期化の案内と回帰検証。既存guideは更新し配置規約の本文を複製しない",
+      "target_alignment": "既存offline resource機構を使い契約とadapter境界を維持"
+    },
+    {
+      "path": ".agents/skills/harness-plan/SKILL.md",
+      "reason": "CLIの文書発見・正本優先・初期化の案内と回帰検証。既存guideは更新し配置規約の本文を複製しない",
+      "target_alignment": "既存offline resource機構を使い契約とadapter境界を維持"
+    },
+    {
+      "path": ".agents/skills/harness-learn/SKILL.md",
+      "reason": "CLIの文書発見・正本優先・初期化の案内と回帰検証。既存guideは更新し配置規約の本文を複製しない",
+      "target_alignment": "既存offline resource機構を使い契約とadapter境界を維持"
+    },
+    {
+      "path": ".agents/skills/harness-garden/SKILL.md",
+      "reason": "CLIの文書発見・正本優先・初期化の案内と回帰検証。既存guideは更新し配置規約の本文を複製しない",
+      "target_alignment": "既存offline resource機構を使い契約とadapter境界を維持"
+    },
+    {
+      "path": ".agents/skills/harness-review/SKILL.md",
+      "reason": "CLIの文書発見・正本優先・初期化の案内と回帰検証。既存guideは更新し配置規約の本文を複製しない",
+      "target_alignment": "既存offline resource機構を使い契約とadapter境界を維持"
+    },
+    {
+      "path": "docs/exec-plans/completed/documentation-cli.md",
+      "reason": "CLIの文書発見・正本優先・初期化の案内と回帰検証。既存guideは更新し配置規約の本文を複製しない",
+      "target_alignment": "既存offline resource機構を使い契約とadapter境界を維持"
+    }
+  ],
+  "cross_system_impact": {
+    "consumers": [],
+    "reason": "No registered external consumers; existing CLI interface preserved"
+  },
+  "reviewer": "harness-maintainers"
+}

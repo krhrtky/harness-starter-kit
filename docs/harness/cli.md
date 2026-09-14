@@ -7,6 +7,8 @@
 | Command | 操作 |
 |---|---|
 | `usage [TOPIC]` | オフラインの目次・guide・Skill全文。commandsは実parser由来の引数一覧 |
+| `usage harness-document` | 文書の探索・配置判断・更新・網羅性確認を行うSkill全文。初期化不要 |
+| `usage documentation` | 文書の配置・形式・網羅性・Agent実行契約の全文。初期化不要。repository固有の規約はローカル正本を読む |
 | `schema [NAME]` | 初期化前にも入力契約を取得。省略時は一覧 |
 | `init --owner TEAM --mode greenfield` | seed/Skills/schemaを配置。既存文書は保存 |
 | `inspect` | 技術候補、AGENTS階層、source digest。実行・自動有効化なし |

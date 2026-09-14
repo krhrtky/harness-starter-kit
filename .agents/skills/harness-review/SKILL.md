@@ -7,6 +7,8 @@ description: 検証済みTaskを構造化された意味論レビューで評価
 
 repository rootを作業基準とする。別ディレクトリからは `harnessctl --root <repo> ...` を使う。
 
+文書の作成・更新・配置整理・網羅性確認は`harness-document`（`harnessctl usage harness-document`で取得）を使い、このphaseのTaskとscopeを引き継ぐ。配置の基準はローカルの正本を優先する。共通規約は`harnessctl usage documentation`で取得できる。
+
 要求と現在のknowledge、実装、Evidence Bundleを改めて読み、実装時の自己説明に依存しない。
 `.harness/schemas/findings.schema.json`で各ACおよびglobal-impactについてentailment/contradiction/counterexampleを記録する。
 `harnessctl inspect`のsource_digestを各findingに付け、Task指定reviewer名を使う。証拠path・前提・反例・unsupported assumptionsを記録する。

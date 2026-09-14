@@ -24,7 +24,7 @@ def parser():
     p.add_argument('--root',default='.',help='Repository root; place before the subcommand')
     subs = p.add_subparsers(dest='command',required=True)
     i = subs.add_parser('usage',help='Read offline guides, Skills and the command catalog')
-    i.add_argument('topic',nargs='?',default='index',help='index, commands, agent, cli, getting-started, operating-model or a Skill name')
+    i.add_argument('topic',nargs='?',default='index',help='documentation for placement rules; agent for the entrypoint; omit to list all guides and Skills')
     i = subs.add_parser('schema',help='Read embedded JSON Schema contracts without a repository')
     i.add_argument('name',nargs='?',help='Schema name; omit to list all names')
     i = subs.add_parser('result',help='Validate tool JSON against a repository-owned result schema')

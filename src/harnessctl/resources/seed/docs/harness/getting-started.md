@@ -3,6 +3,8 @@
 Harnessは、Coding Agentが既存資産と制約を確認して実装し、証拠を残して完了するための共通基盤です。
 利用者は目的とプロジェクト固有の決定を伝え、AgentはSkillsとCLIを使って作業します。
 
+開発全体の考え方と役割分担は、[Harnessが支える開発プロセス](development-process.md)を先に参照してください。
+
 ## 1. CLIを実行環境へ導入する
 
 GitHub ReleasesからOS/CPUに一致するarchiveを取得し、checksumを確認して展開します。
@@ -14,7 +16,7 @@ wheelのpathは受け取った実ファイルの場所に置き換えます。
 
 ```sh
 python3 -m venv .harness-cli-venv
-.harness-cli-venv/bin/python -m pip install /path/to/harness_starter_kit-1.0.0-py3-none-any.whl
+.harness-cli-venv/bin/python -m pip install /path/to/harness_starter_kit-1.2.0-py3-none-any.whl
 .harness-cli-venv/bin/harnessctl --version
 ```
 
@@ -36,7 +38,7 @@ harnessctl --root /path/to/repo init --owner team-name --mode brownfield
 harnessctl --root /path/to/repo doctor
 ```
 
-initは`.harness/`、knowledge文書、router、10 Skillsを配置します。既存文書は上書きしません。
+initは`.harness/`、knowledge文書、router、11 Skillsを配置します。既存文書は上書きしません。
 既存AGENTS.mdがある場合は、initのpreserved一覧を確認してHarness routerを統合します。
 直後のdoctorがUNKNOWNを報告するのは、プロジェクト固有の決定が未設定だからです。
 
@@ -95,3 +97,9 @@ Python実装を維持し、PyInstallerでPython・依存関係・usage・schema�
 配布gateは、外部Python/Gitをchild PATHから除外し、コピーした実行fileでusage/schema、init、doctor、fixture deliveryを確認することです。
 現在のprocess timeoutはPOSIX向けです。Windows版はパッケージ化だけで対応完了にはなりません。
 また、単体化しても対象プロジェクトのNode/Java/test runnerなどは、そのプロジェクト用に準備する必要があります。
+
+文書を書くときは[ドキュメントの配置と網羅性](documentation-policy.md)を参照してください。領域・文書形式の選び方、漏れの点検、AI Agentの実行契約を定めています。
+
+CLIだけで配置基準を読む場合は`harnessctl usage documentation`を実行し、JSONの`content`を読んでください。これは同梱の共通規約です。初期化後はrepositoryの配置規約と既存正本を先に確認し、同梱版で上書きしません。Agent向けの適用順序と既存文書が保持された場合の手順は`harnessctl usage agent`で取得できます。
+
+文書作業を依頼する場合は「harness-documentを使い、既存正本を確認してから文書を更新してください」と伝えます。CLIからは`harnessctl usage harness-document`で手順を取得できます。

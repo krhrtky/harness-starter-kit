@@ -27,6 +27,9 @@ def smoke(binary):
                 raise RuntimeError(f'{args}: exit {process.returncode}\n{process.stdout}\n{process.stderr}')
             return json.loads(process.stdout)
         index=run('usage')
+        skill_topics={topic['id'] for topic in index['topics'] if topic['id'].startswith('harness-')}
+        if 'harness-document' not in skill_topics:
+            raise RuntimeError('Document Skill is not discoverable')
         for topic in index['topics']:run('usage',topic['id'])
         for name in run('schema')['schemas']:run('schema',name)
         write(root/'accepted.schema.json',{'$schema':'https://json-schema.org/draft/2020-12/schema','type':'object','properties':{'status':{'const':'PASS'}},'required':['status']})
@@ -38,8 +41,12 @@ def smoke(binary):
         run('result','validate','--schema','accepted.schema.json','--input','result.json',expected=2)
         run('init','--owner','fixture-owner')
         run('doctor',expected=1)
-        if len(list((root/'.agents/skills').glob('*/SKILL.md')))!=10:
-            raise RuntimeError('Bundled Skills missing')
+        installed_skills={path.parent.name for path in (root/'.agents/skills').glob('*/SKILL.md')}
+        if installed_skills != skill_topics:
+            raise RuntimeError('Discovered and installed Skills differ')
+        for name in skill_topics:
+            if (root/'.agents/skills'/name/'SKILL.md').read_text()!=run('usage',name)['content']:
+                raise RuntimeError(f'Installed Skill differs from embedded usage: {name}')
         task=configured(root)
         capabilities=read(root/'.harness/capabilities.json')
         capabilities['capabilities'][0]['argv']=['/bin/sh','-c','test -f app/orders.py']
@@ -50,7 +57,7 @@ def smoke(binary):
         review='.harness/runs/TASK-1/review.json'
         write(root/review,findings(root,task))
         run('check','--phase','delivery','--task','.harness/tasks/task.json','--bundle',result['bundle'],'--findings',review)
-        print(json.dumps(dict(ok=True,topics=len(index['topics']),schemas=len(run('schema')['schemas']),skills=10,external_python=False,external_git=False,delivery='passed')))
+        print(json.dumps(dict(ok=True,topics=len(index['topics']),schemas=len(run('schema')['schemas']),skills=len(installed_skills),external_python=False,external_git=False,delivery='passed')))
 
 
 if __name__=='__main__':

@@ -243,6 +243,15 @@
       "status": "unknown",
       "reviewed_at": "2026-01-01T00:00:00+00:00",
       "content_digest": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "documentation-placement",
+      "path": "docs/harness/documentation-policy.md",
+      "interface": "H13",
+      "owner": "UNKNOWN",
+      "status": "unknown",
+      "reviewed_at": "2026-01-01T00:00:00+00:00",
+      "content_digest": "5b9d37e7d70f6f4d2864de26ee267fa46e2c9e0b0f096d9e5938bdb1e659ec28"
     }
   ]
 }

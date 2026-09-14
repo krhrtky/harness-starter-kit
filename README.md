@@ -3,7 +3,10 @@
 Coding Agent向けにTask Delivery、Repository Evolution、Team Evolutionの3ループを提供するPython製Harness Platform。
 H00–H16をDelivery Interfaces、H17–H26をEvolution Interfacesとして扱う。
 
-**初めて使う場合は[利用開始ガイド](docs/harness/getting-started.md)を参照してください。**
+**開発の考え方は[Harnessが支える開発プロセス](docs/harness/development-process.md)を参照してください。**
+目的と変更範囲の共有、証拠に基づく完了判断、学びを次の開発へ戻す流れを説明しています。
+
+導入する場合は[利用開始ガイド](docs/harness/getting-started.md)を参照してください。
 ユーザー向けセットアップ、Agentへの依頼例、Agentの入口と完了条件をまとめています。
 
 GitHub Releases向けにPython不要のmacOS/Linuxバイナリを提供します。

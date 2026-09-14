@@ -5,6 +5,7 @@ from . import __version__
 from .storage import HarnessError, RESOURCES, SCHEMAS, read
 
 GUIDES = {
+    'documentation': ('文書の配置・種別・網羅性とAI Agentの判断手順', 'documentation-policy.md'),
     'verification-tools': ('Quint・Apalache・Hypothesisのsetupと実行', 'verification-tools.md'),
     'verification': ('検証の3分類・tool接続と結果契約', 'verification.md'),
     'getting-started': ('ユーザーとAgentの利用開始', 'getting-started.md'),

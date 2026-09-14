@@ -7,6 +7,8 @@ description: 空または既存repositoryへHarnessを導入する際に使用�
 
 repository rootを作業基準とする。別ディレクトリからは `harnessctl --root <repo> ...` を使う。
 
+文書の作成・更新・配置整理・網羅性確認は`harness-document`（`harnessctl usage harness-document`で取得）を使い、このphaseのTaskとscopeを引き継ぐ。配置の基準はローカルの正本を優先する。共通規約は`harnessctl usage documentation`で取得できる。
+
 `harnessctl inspect`で既存の構成とAGENTS階層を確認する。既存文書を先に読む。
 `harnessctl init --owner <owner> --mode greenfield|brownfield`を実行する。preserved一覧の既存AGENTSへrouterを統合する。
 `.harness/knowledge.json`、interfaces、evolutionにプロジェクトが実際に決めたことだけを記録する。

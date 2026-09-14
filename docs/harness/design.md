@@ -9,7 +9,7 @@ CLIが機械判定、Skillsがorchestrationとsemantic reasoningを担当する�
 
 ## Scope and success criteria
 
-27 interface、3 loop、14必須CLI command、10 Skills、schema、fixtureとmutation testを配布する。
+27 interface、3 loop、14必須CLI command、11 Skills、schema、fixtureとmutation testを配布する。
 有効なfixtureのdeliveryがexit 0、欠損・失敗・改変・scope逸脱が非0となることを成功条件とする。
 ドメインの正解・SLOの値・実行sandbox・共有サービスの認証・production deploymentは導入先が提供する。
 

@@ -36,7 +36,7 @@ wheelを作り、別venvへinstallしてinitすることでschema/seed/Skillsが
 
 ## Skills source
 
-10 Skillsは`.agents/skills/harness-*`へ配置する。`SKILL.md`のname/descriptionと必要時の本文読込みを前提にする。
+11 Skillsは`.agents/skills/harness-*`へ配置する。`SKILL.md`のname/descriptionと必要時の本文読込みを前提にする。
 形式は[OpenAIのSkillsドキュメント](https://learn.chatgpt.com/docs/build-skills)を参照した。
 CLIの機械判定とsemantic reasoningを混在させず、Skills内でschema validatorを再実装しない。
 

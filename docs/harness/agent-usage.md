@@ -31,8 +31,23 @@ Featureはintake→preflight→plan→implement→verify→review→deliver。
 手順に不明点があれば`usage harness-<phase>`を読み、入力形式は`schema <name>`で確認する。
 exit 1を成功へ読み替えない。exit 2は入力や環境設定を修正する。
 
+
+## 文書を作る・更新する前
+
+文書の作成・更新・配置整理・網羅性確認は`harness-document`を使う。自動発見されない場合や初期化前は`harnessctl usage harness-document`でSkill全文を取得し、JSONの`content`を読む。判断基準は配置規約、実行手順はこのSkillが担当する。
+
+初期化前でも`harnessctl usage documentation`で配置規約の全文を取得できる。JSONの`content`を読む。このコマンドはCLIに同梱した共通規約を返し、`--root`で指定したrepositoryの文書を読み取るものではない。
+
+初期化後は、ユーザーの明示指示と既存の正本指定を保持し、repositoryの`docs/harness/documentation-policy.md`（またはAGENTS.mdが指定するローカル規約）を先に読む。同梱版でローカル規約を上書きしない。旧版の導入先でローカル規約がない場合は、既存正本を検索し同梱規約を共通の判断基準として使う。矛盾する項目だけを未決として確認する。
+
+規約の「配置を決める順序」に従い、正本・主領域・形式・更新か新規か・選択根拠を計画または変更説明へ記録する。初期化後の登録済み正本は`harnessctl knowledge index`でも確認できる。未登録文書も検索する。迷った項目は候補と影響を示し、未決情報を現行仕様へ昇格しない。
+
+`init`でAGENTS.mdや規約がpreservedになった場合も、この取得コマンドを使える。既存ルールを保ち、配置規約への参照をrouterへ統合する。`knowledge check`の成功は分類・本文の十分性の自動保証ではない。配置規約の網羅性点検と3視点のレビューも行う。
+
 ## Versionと権限
 
 binary内のusageはそのCLI versionに対応する。repositoryへ展開した文書は導入先で変更されている場合がある。
 CLIの仕様はbinaryのusage/schema、プロジェクト固有の判断はrepositoryのknowledgeを読む。
 upgrade時はmigrateの差分とconflictを確認する。usageの取得は実行・変更の権限を増やさない。
+
+新しいSkillを既存導入先へ追加するときは、更新したCLIで`harnessctl migrate`のupdates/conflictsを確認してから`harnessctl migrate --apply`を実行する。ローカル編集されたSkillのconflictは内容を確認して統合し、上書きで解消しない。`init`の再実行では初期化済みrepositoryへ追加されない。

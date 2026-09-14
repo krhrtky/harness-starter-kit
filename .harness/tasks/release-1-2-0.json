@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "id": "RELEASE-1-2-0",
+  "outcome": "文書配置規約・harness-document・CLI導線を含むv1.2.0を既存4対象のGitHub Releaseとして公開する",
+  "non_goals": [
+    "Bundle external verification engines into the CLI",
+    "Change repository visibility"
+  ],
+  "acceptance": [
+    {
+      "id": "AC-RELEASE",
+      "statement": "Version metadata and release notes agree on v1.2.0; all registered verification profiles pass; the tagged four-platform build publishes archives and checksums containing documentation guidance and harness-document",
+      "capabilities": [
+        "test.unit",
+        "verify.formal",
+        "verify.properties"
+      ]
+    }
+  ],
+  "risk": {
+    "level": "low",
+    "reasons": [
+      "後方互換の文書Skillと案内を既存の4対象配布経路で公開。schemaと実行権限を変更しない"
+    ]
+  },
+  "affected_interfaces": [
+    "H00",
+    "H02",
+    "H03",
+    "H09",
+    "H10",
+    "H11",
+    "H13",
+    "H14",
+    "H17",
+    "H18",
+    "H20",
+    "H26"
+  ],
+  "scope": [
+    "pyproject.toml",
+    "src/harnessctl/__init__.py",
+    "docs/harness/release-notes.md",
+    "docs/harness/getting-started.md",
+    "src/harnessctl/resources/seed/docs/harness/getting-started.md",
+    "docs/exec-plans/completed/release-1-2-0.md"
+  ],
+  "constraints": [
+    "No policy or capability changes after preflight",
+    "Preserve producer failures and managed process groups"
+  ],
+  "required_capabilities": [
+    "test.unit",
+    "verify.formal",
+    "verify.properties"
+  ],
+  "unknowns": [],
+  "asset_analysis": {
+    "searched_capabilities": [
+      "harness.gates",
+      "harness.bootstrap",
+      "harness.documentation"
+    ],
+    "reused": [
+      "harness.cli",
+      "harness.seed",
+      "harness-bootstrap",
+      "harness-document"
+    ],
+    "extended": [],
+    "new_assets": [],
+    "duplicates_considered": [
+      {
+        "asset": "harness.cli",
+        "decision": "reuse",
+        "reason": "検証済みのCLI・同梱Skillと既存非破壊配布経路を版更新して配布"
+      },
+      {
+        "asset": "harness.seed",
+        "decision": "reuse",
+        "reason": "検証済みのCLI・同梱Skillと既存非破壊配布経路を版更新して配布"
+      },
+      {
+        "asset": "harness-bootstrap",
+        "decision": "reuse",
+        "reason": "検証済みのCLI・同梱Skillと既存非破壊配布経路を版更新して配布"
+      },
+      {
+        "asset": "harness-document",
+        "decision": "reuse",
+        "reason": "検証済みのCLI・同梱Skillと既存非破壊配布経路を版更新して配布"
+      }
+    ],
+    "consolidation_opportunities": []
+  },
+  "placement": [
+    {
+      "path": "pyproject.toml",
+      "reason": "v1.2.0の版・利用案内・release notesを既存配置で更新",
+      "target_alignment": "既存4対象のtag release workflowを維持"
+    },
+    {
+      "path": "src/harnessctl/__init__.py",
+      "reason": "v1.2.0の版・利用案内・release notesを既存配置で更新",
+      "target_alignment": "既存4対象のtag release workflowを維持"
+    },
+    {
+      "path": "docs/harness/release-notes.md",
+      "reason": "v1.2.0の版・利用案内・release notesを既存配置で更新",
+      "target_alignment": "既存4対象のtag release workflowを維持"
+    },
+    {
+      "path": "docs/harness/getting-started.md",
+      "reason": "v1.2.0の版・利用案内・release notesを既存配置で更新",
+      "target_alignment": "既存4対象のtag release workflowを維持"
+    },
+    {
+      "path": "src/harnessctl/resources/seed/docs/harness/getting-started.md",
+      "reason": "v1.2.0の版・利用案内・release notesを既存配置で更新",
+      "target_alignment": "既存4対象のtag release workflowを維持"
+    },
+    {
+      "path": "docs/exec-plans/completed/release-1-2-0.md",
+      "reason": "v1.2.0の版・利用案内・release notesを既存配置で更新",
+      "target_alignment": "既存4対象のtag release workflowを維持"
+    }
+  ],
+  "cross_system_impact": {
+    "consumers": [],
+    "reason": "No registered external consumers; exercise installed CLI, seed distribution and existing fixtures"
+  },
+  "reviewer": "harness-maintainers"
+}

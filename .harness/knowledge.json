@@ -124,8 +124,8 @@
       "interface": "H13",
       "owner": "harness-maintainers",
       "status": "documented",
-      "reviewed_at": "2026-09-13T14:34:25.810298+00:00",
-      "content_digest": "094057160a47fc5376d271aab0bb2cb93a23d7f0adbed89c4400c2a3f011961f"
+      "reviewed_at": "2026-09-14T13:55:21.278931+00:00",
+      "content_digest": "ac72049a533e89d4d070e69ec24ab310f83ca6938a2087ba36fa11ad864dfe27"
     },
     {
       "id": "exec-plans",
@@ -243,6 +243,15 @@
       "status": "documented",
       "reviewed_at": "2026-09-13T14:34:25.810957+00:00",
       "content_digest": "0c24f8f36591121adbbd0c6cbe6082ea012142d3d4a8a723e9a48b236dc2a1a2"
+    },
+    {
+      "id": "documentation-placement",
+      "path": "docs/harness/documentation-policy.md",
+      "interface": "H13",
+      "owner": "harness-maintainers",
+      "status": "documented",
+      "reviewed_at": "2026-09-14T13:55:21.278931+00:00",
+      "content_digest": "5b9d37e7d70f6f4d2864de26ee267fa46e2c9e0b0f096d9e5938bdb1e659ec28"
     }
   ]
 }

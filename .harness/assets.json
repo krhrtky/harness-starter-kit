@@ -305,6 +305,30 @@
         "Source checkout, POSIX, local Node/Java/Python required",
         "Bounded model and generated tests are not model-to-code equivalence proof"
       ]
+    },
+    {
+      "id": "harness-document",
+      "type": "skill",
+      "purpose": "文書の正本探索・配置判断・更新・網羅性確認",
+      "scope": [
+        "**"
+      ],
+      "status": "experimental",
+      "owner": "harness-maintainers",
+      "location": ".agents/skills/harness-document",
+      "provides": [
+        "harness.documentation"
+      ],
+      "version": "1.0.0",
+      "consumers": [],
+      "evidence": [
+        "tests/test_discovery.py",
+        "docs/harness/documentation-policy.md"
+      ],
+      "deprecated_by": null,
+      "constraints": [
+        "配置規約を正本とし、独自の分類基準やgateを持たない"
+      ]
     }
   ]
 }

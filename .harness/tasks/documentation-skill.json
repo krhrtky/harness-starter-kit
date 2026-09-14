@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "id": "DOCS-SKILL-1",
+  "outcome": "harness-document SkillをCLIと配布物へ同梱し、導入先で文書作業の入口として取得・配置・更新できる",
+  "non_goals": [
+    "文書配置規約の重複実装",
+    "公開先へのアップロードやリリース",
+    "Agentによる意味判断の自動保証",
+    "既存プロジェクトの文書移動"
+  ],
+  "acceptance": [
+    {
+      "id": "AC-SKILL",
+      "statement": "専用Skillが既存正本の探索、配置判断、更新、網羅性・整合性確認と未決時の扱いを規約参照で定義し、既存入口から参照される",
+      "capabilities": [
+        "test.unit"
+      ]
+    },
+    {
+      "id": "AC-DISTRIBUTION",
+      "statement": "usageの目次とharness-document全文取得、initでのSkill配置、migrateでの追加とローカル変更保持を検証する。wheelとホスト向け単体binaryに同梱される",
+      "capabilities": [
+        "test.unit"
+      ]
+    }
+  ],
+  "risk": {
+    "level": "low",
+    "reasons": [
+      "既存resource同梱機構でSkillを追加する。schema・policy・実行権限は変えない"
+    ]
+  },
+  "affected_interfaces": [
+    "H09",
+    "H11",
+    "H13",
+    "H17",
+    "H18"
+  ],
+  "scope": [
+    "tests/test_discovery.py",
+    "docs/harness/agent-usage.md",
+    "docs/harness/getting-started.md",
+    "docs/harness/cli.md",
+    "src/harnessctl/resources/seed/docs/harness/agent-usage.md",
+    "src/harnessctl/resources/seed/docs/harness/getting-started.md",
+    "src/harnessctl/resources/seed/docs/harness/cli.md",
+    "src/harnessctl/resources/skills/harness-bootstrap/SKILL.md",
+    "src/harnessctl/resources/skills/harness-intake/SKILL.md",
+    "src/harnessctl/resources/skills/harness-plan/SKILL.md",
+    "src/harnessctl/resources/skills/harness-learn/SKILL.md",
+    "src/harnessctl/resources/skills/harness-garden/SKILL.md",
+    "src/harnessctl/resources/skills/harness-review/SKILL.md",
+    ".agents/skills/harness-bootstrap/SKILL.md",
+    ".agents/skills/harness-intake/SKILL.md",
+    ".agents/skills/harness-plan/SKILL.md",
+    ".agents/skills/harness-learn/SKILL.md",
+    ".agents/skills/harness-garden/SKILL.md",
+    ".agents/skills/harness-review/SKILL.md",
+    "src/harnessctl/resources/skills/harness-document/SKILL.md",
+    ".agents/skills/harness-document/SKILL.md",
+    "AGENTS.md",
+    "src/harnessctl/resources/seed/AGENTS.md",
+    ".harness/assets.json",
+    "tooling/smoke_binary.py",
+    "docs/harness/design.md",
+    "docs/harness/validation.md",
+    "docs/exec-plans/completed/documentation-skill.md"
+  ],
+  "constraints": [
+    "No project policy weakening",
+    "No guessed application commands"
+  ],
+  "required_capabilities": [
+    "test.unit"
+  ],
+  "unknowns": [],
+  "asset_analysis": {
+    "searched_capabilities": [
+      "harness.gates",
+      "harness.bootstrap",
+      "harness.documentation"
+    ],
+    "reused": [
+      "harness-bootstrap"
+    ],
+    "extended": [
+      "harness.cli",
+      "harness.seed"
+    ],
+    "new_assets": [
+      {
+        "id": "harness-document",
+        "provides": [
+          "harness.documentation"
+        ],
+        "path": ".agents/skills/harness-document",
+        "reason": "既存Skillはphase固有の処理。文書単独の依頼を受け、正本探索から確認まで行う共通入口がないため新設する"
+      }
+    ],
+    "duplicates_considered": [
+      {
+        "asset": "harness.cli",
+        "decision": "extend",
+        "reason": "既存usage dispatcherへtopicを登録し、別の文書取得機構を作らない"
+      },
+      {
+        "asset": "harness.seed",
+        "decision": "extend",
+        "reason": "既存配置規約の本文をそのまま配布・表示する"
+      },
+      {
+        "asset": "harness-bootstrap",
+        "decision": "reuse",
+        "reason": "非破壊initとpreserved確認手順を維持し案内のみ追加する"
+      }
+    ],
+    "consolidation_opportunities": []
+  },
+  "placement": [
+    {
+      "path": "tests/test_discovery.py",
+      "reason": "文書Skillの既存配布経路への接続、利用案内、配布回帰検証。規約は既存正本を参照",
+      "target_alignment": "既存のresource同梱と非破壊init/migrateを維持"
+    },
+    {
+      "path": "docs/harness/agent-usage.md",
+      "reason": "文書Skillの既存配布経路への接続、利用案内、配布回帰検証。規約は既存正本を参照",
+      "target_alignment": "既存のresource同梱と非破壊init/migrateを維持"
+    },
+    {
+      "path": "docs/harness/getting-started.md",
+      "reason": "文書Skillの既存配布経路への接続、利用案内、配布回帰検証。規約は既存正本を参照",
+      "target_alignment": "既存のresource同梱と非破壊init/migrateを維持"
+    },
+    {
+      "path": "docs/harness/cli.md",
+      "reason": "文書Skillの既存配布経路への接続、利用案内、配布回帰検証。規約は既存正本を参照",
+      "target_alignment": "既存のresource同梱と非破壊init/migrateを維持"
+    },
+    {
+      "path": "src/harnessctl/resources/seed/docs/harness/agent-usage.md",
+      "reason": "文書Skillの既存配布経路への接続、利用案内、配布回帰検証。規約は既存正本を参照",
+      "target_alignment": "既存のresource同梱と非破壊init/migrateを維持"
+    },
+    {
+      "path": "src/harnessctl/resources/seed/docs/harness/getting-started.md",
+      "reason": "文書Skillの既存配布経路への接続、利用案内、配布回帰検証。規約は既存正本を参照",
+      "target_alignment": "既存のresource同梱と非破壊init/migrateを維持"
+    },
+    {
+      "path": "src/harnessctl/resources/seed/docs/harness/cli.md",
+      "reason": "文書Skillの既存配布経路への接続、利用案内、配布回帰検証。規約は既存正本を参照",
+      "target_alignment": "既存のresource同梱と非破壊init/migrateを維持"
+    },
+    {
+      "path": "src/harnessctl/resources/skills/harness-bootstrap/SKILL.md",
+      "reason": "文書Skillの既存配布経路への接続、利用案内、配布回帰検証。規約は既存正本を参照",
+      "target_alignment": "既存のresource同梱と非破壊init/migrateを維持"
+    },
+    {
+      "path": "src/harnessctl/resources/skills/harness-intake/SKILL.md",
+      "reason": "文書Skillの既存配布経路への接続、利用案内、配布回帰検証。規約は既存正本を参照",
+      "target_alignment": "既存のresource同梱と非破壊init/migrateを維持"
+    },
+    {
+      "path": "src/harnessctl/resources/skills/harness-plan/SKILL.md",
+      "reason": "文書Skillの既存配布経路への接続、利用案内、配布回帰検証。規約は既存正本を参照",
+      "target_alignment": "既存のresource同梱と非破壊init/migrateを維持"
+    },
+    {
+      "path": "src/harnessctl/resources/skills/harness-learn/SKILL.md",
+      "reason": "文書Skillの既存配布経路への接続、利用案内、配布回帰検証。規約は既存正本を参照",
+      "target_alignment": "既存のresource同梱と非破壊init/migrateを維持"
+    },
+    {
+      "path": "src/harnessctl/resources/skills/harness-garden/SKILL.md",
+      "reason": "文書Skillの既存配布経路への接続、利用案内、配布回帰検証。規約は既存正本を参照",
+      "target_alignment": "既存のresource同梱と非破壊init/migrateを維持"
+    },
+    {
+      "path": "src/harnessctl/resources/skills/harness-review/SKILL.md",
+      "reason": "文書Skillの既存配布経路への接続、利用案内、配布回帰検証。規約は既存正本を参照",
+      "target_alignment": "既存のresource同梱と非破壊init/migrateを維持"
+    },
+    {
+      "path": ".agents/skills/harness-bootstrap/SKILL.md",
+      "reason": "文書Skillの既存配布経路への接続、利用案内、配布回帰検証。規約は既存正本を参照",
+      "target_alignment": "既存のresource同梱と非破壊init/migrateを維持"
+    },
+    {
+      "path": ".agents/skills/harness-intake/SKILL.md",
+      "reason": "文書Skillの既存配布経路への接続、利用案内、配布回帰検証。規約は既存正本を参照",
+      "target_alignment": "既存のresource同梱と非破壊init/migrateを維持"
+    },
+    {
+      "path": ".agents/skills/harness-plan/SKILL.md",
+      "reason": "文書Skillの既存配布経路への接続、利用案内、配布回帰検証。規約は既存正本を参照",
+      "target_alignment": "既存のresource同梱と非破壊init/migrateを維持"
+    },
+    {
+      "path": ".agents/skills/harness-learn/SKILL.md",
+      "reason": "文書Skillの既存配布経路への接続、利用案内、配布回帰検証。規約は既存正本を参照",
+      "target_alignment": "既存のresource同梱と非破壊init/migrateを維持"
+    },
+    {
+      "path": ".agents/skills/harness-garden/SKILL.md",
+      "reason": "文書Skillの既存配布経路への接続、利用案内、配布回帰検証。規約は既存正本を参照",
+      "target_alignment": "既存のresource同梱と非破壊init/migrateを維持"
+    },
+    {
+      "path": ".agents/skills/harness-review/SKILL.md",
+      "reason": "文書Skillの既存配布経路への接続、利用案内、配布回帰検証。規約は既存正本を参照",
+      "target_alignment": "既存のresource同梱と非破壊init/migrateを維持"
+    },
+    {
+      "path": "src/harnessctl/resources/skills/harness-document/SKILL.md",
+      "reason": "文書Skillの既存配布経路への接続、利用案内、配布回帰検証。規約は既存正本を参照",
+      "target_alignment": "既存のresource同梱と非破壊init/migrateを維持"
+    },
+    {
+      "path": ".agents/skills/harness-document/SKILL.md",
+      "reason": "文書Skillの既存配布経路への接続、利用案内、配布回帰検証。規約は既存正本を参照",
+      "target_alignment": "既存のresource同梱と非破壊init/migrateを維持"
+    },
+    {
+      "path": "AGENTS.md",
+      "reason": "文書Skillの既存配布経路への接続、利用案内、配布回帰検証。規約は既存正本を参照",
+      "target_alignment": "既存のresource同梱と非破壊init/migrateを維持"
+    },
+    {
+      "path": "src/harnessctl/resources/seed/AGENTS.md",
+      "reason": "文書Skillの既存配布経路への接続、利用案内、配布回帰検証。規約は既存正本を参照",
+      "target_alignment": "既存のresource同梱と非破壊init/migrateを維持"
+    },
+    {
+      "path": ".harness/assets.json",
+      "reason": "文書Skillの既存配布経路への接続、利用案内、配布回帰検証。規約は既存正本を参照",
+      "target_alignment": "既存のresource同梱と非破壊init/migrateを維持"
+    },
+    {
+      "path": "tooling/smoke_binary.py",
+      "reason": "文書Skillの既存配布経路への接続、利用案内、配布回帰検証。規約は既存正本を参照",
+      "target_alignment": "既存のresource同梱と非破壊init/migrateを維持"
+    },
+    {
+      "path": "docs/harness/design.md",
+      "reason": "文書Skillの既存配布経路への接続、利用案内、配布回帰検証。規約は既存正本を参照",
+      "target_alignment": "既存のresource同梱と非破壊init/migrateを維持"
+    },
+    {
+      "path": "docs/harness/validation.md",
+      "reason": "文書Skillの既存配布経路への接続、利用案内、配布回帰検証。規約は既存正本を参照",
+      "target_alignment": "既存のresource同梱と非破壊init/migrateを維持"
+    },
+    {
+      "path": "docs/exec-plans/completed/documentation-skill.md",
+      "reason": "文書Skillの既存配布経路への接続、利用案内、配布回帰検証。規約は既存正本を参照",
+      "target_alignment": "既存のresource同梱と非破壊init/migrateを維持"
+    }
+  ],
+  "cross_system_impact": {
+    "consumers": [],
+    "reason": "No registered external consumers; existing CLI interface preserved"
+  },
+  "reviewer": "harness-maintainers"
+}
