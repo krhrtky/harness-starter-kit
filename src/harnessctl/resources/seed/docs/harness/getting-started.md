@@ -16,7 +16,7 @@ wheelのpathは受け取った実ファイルの場所に置き換えます。
 
 ```sh
 python3 -m venv .harness-cli-venv
-.harness-cli-venv/bin/python -m pip install /path/to/harness_starter_kit-1.2.0-py3-none-any.whl
+.harness-cli-venv/bin/python -m pip install /path/to/harness_starter_kit-1.2.1-py3-none-any.whl
 .harness-cli-venv/bin/harnessctl --version
 ```
 
